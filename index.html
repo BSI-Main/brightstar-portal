@@ -1,90 +1,120 @@
 <!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>พอร์ทัลผู้ปกครอง & โรงเรียน · BrightStar Assessment Institute</title>
+<title>เข้าสู่ระบบ · BrightStar Assessment Institute</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
-.hero{position:relative;background:radial-gradient(1000px 380px at 50% -120px,#fff6e0,transparent),linear-gradient(160deg,#5C3A22,#9C7B3F 60%,#B0883C);color:#fff;text-align:center;padding:48px 18px 40px;border-bottom:4px solid var(--gold)}
-.hero img{width:96px;background:#FFFDF7;border-radius:18px;padding:8px;box-shadow:0 8px 22px rgba(0,0,0,.18)}
-.hero .k{letter-spacing:4px;font-size:12px;font-weight:700;color:#ffe9b0;margin-top:8px}
-.hero h1{font-family:"Cormorant Garamond",serif;font-size:40px;margin:6px 0 2px}
-.hero p{font-size:15px;color:#f3e7cd;margin:2px 0 0}
-.wrap{max-width:1000px;margin:0 auto;padding:26px 18px 80px}
-h2{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:26px;margin:34px 0 14px;border-left:5px solid var(--gold);padding-left:12px}
-.roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:-30px;position:relative;z-index:3}
-@media(max-width:680px){.roles{grid-template-columns:1fr}}
-.role{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(120,80,20,.10)}
-.role .ic{font-size:38px}.role h3{font-family:"Cormorant Garamond",serif;color:var(--deep);font-size:24px;margin:6px 0 2px}
-.role .d{font-size:13.5px;color:var(--grey);min-height:38px}
-.btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:26px;font-size:15px;border:0;cursor:pointer;font-family:inherit;text-align:center}
-.btn:hover{background:var(--deep)}.btn.gold{background:var(--gold);color:#241B12}.btn.ghost{background:transparent;color:var(--berry);border:1.5px solid var(--berry)}
-.role .btn{width:100%;margin-top:10px}
-.qf{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
-.qf label{font-size:12.5px;font-weight:600;color:var(--grey);display:block;margin-bottom:5px}
-.qf input{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;font-family:inherit;font-size:13.5px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;border-top:4px solid var(--c,#9C7B3F)}
-.card .ic{font-size:26px}.card .nm{font-weight:700;color:var(--c,#9C7B3F);font-size:16px;margin-top:4px}
-.card .ds{font-size:12.5px;color:var(--ink);margin-top:4px}
-.round{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:14px;margin-bottom:8px}.round b{color:var(--deep)}
-.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-.note{background:var(--paper);border-left:4px solid var(--gold);border-radius:8px;padding:11px 14px;font-size:13px;color:var(--grey);margin-top:12px}
-footer{text-align:center;color:var(--grey);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+*{box-sizing:border-box}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:linear-gradient(160deg,#5C3A22,#9C7B3F 75%,#B0883C);min-height:100vh;line-height:1.55}
+.shell{max-width:560px;margin:0 auto;padding:40px 18px 60px}
+.top{text-align:center;color:#fff}
+.top img{width:90px;background:#FFFDF7;border-radius:18px;padding:8px;box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.top .k{letter-spacing:4px;font-size:11.5px;font-weight:700;color:#ffe9b0;margin-top:10px}
+.top h1{font-family:"Cormorant Garamond",serif;font-size:34px;margin:4px 0 2px}
+.top p{font-size:14px;color:#f3e7cd;margin:0}
+.card{background:var(--cream);border-radius:20px;padding:24px;margin-top:22px;box-shadow:0 16px 40px rgba(0,0,0,.22)}
+.card h2{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:23px;margin:0 0 4px;text-align:center}
+.card .lead{text-align:center;color:var(--grey);font-size:13.5px;margin:0 0 16px}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.role{display:flex;gap:10px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:12px;cursor:pointer;transition:.15s;text-align:left}
+.role:hover{border-color:var(--gold)}
+.role.sel{border-color:var(--berry);background:#FFFBF1;box-shadow:0 0 0 3px rgba(156,123,63,.15)}
+.role .ic{font-size:26px;line-height:1}
+.role .t{font-weight:700;color:var(--deep);font-size:15px}
+.role .s{font-size:11.5px;color:var(--grey)}
+.panel{margin-top:16px;display:none}
+.panel.on{display:block;animation:f .2s ease}
+@keyframes f{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+label{font-size:13px;font-weight:600;color:var(--grey);display:block;margin:0 0 5px}
+input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:#fff}
+input:focus{outline:none;border-color:var(--berry)}
+.btn{display:block;width:100%;background:var(--berry);color:#fff;font-weight:700;padding:13px;border-radius:26px;font-size:15px;border:0;cursor:pointer;font-family:inherit;margin-top:12px}
+.btn:hover{background:var(--deep)}
+.alt{text-align:center;font-size:12.5px;margin-top:12px}
+.alt a{color:var(--berry);font-weight:600;text-decoration:none}
+.err{color:#B3261E;font-size:12.5px;margin-top:8px;display:none}
+.hint{background:var(--paper);border-radius:9px;padding:9px 12px;font-size:12px;color:var(--grey);margin-top:10px}
+.foot{text-align:center;color:#f3e7cd;font-size:11.5px;margin-top:22px}
+.lock{text-align:center;color:var(--grey);font-size:12px;margin-top:14px}
 </style></head><body>
-<div class="hero">
-  <img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div>
-  <h1>พอร์ทัลผู้ปกครอง &amp; โรงเรียน</h1>
-  <p>เข้าดูผลประเมิน Star Path · เกียรติบัตร · ข้อมูลการจัดสอบ · คำอธิบายข้อสอบ</p>
-</div>
-<div class="wrap">
-  <div class="roles">
-    <div class="role">
-      <div class="ic">👨‍👩‍👧</div><h3>ผู้ปกครอง</h3>
-      <div class="d">ดูคะแนน 5 สมรรถนะ ระดับดาว เกียรติบัตร และพัฒนาการของบุตรหลาน</div>
-      <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">🔐 เข้าสู่ระบบ (สำหรับข้อมูลสด)</a>
-      <div class="qf"><label>หรือดูผลด่วน — วางรหัส/ลิงก์ผลที่สถาบันส่งให้</label>
-        <input id="pcode" placeholder="วางลิงก์ผล หรือรหัส #d=..." onkeydown="if(event.key==='Enter')goParent()">
-        <button class="btn gold" style="width:100%;margin-top:8px" onclick="goParent()">ดูผลของบุตรหลาน →</button>
-      </div>
+<div class="shell">
+  <div class="top">
+    <img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div>
+    <h1>เข้าสู่ระบบ</h1><p>เลือกบทบาทของท่านเพื่อเข้าสู่หน้าของท่าน</p>
+  </div>
+  <div class="card">
+    <h2>เลือกบทบาท</h2>
+    <div class="lead">ผู้ปกครอง/นักเรียน · โรงเรียน · เจ้าหน้าที่ · ผู้ดูแลระบบ</div>
+    <div class="roles">
+      <div class="role" data-r="parent" onclick="pick('parent')"><div class="ic">👨‍👩‍👧</div><div><div class="t">ผู้ปกครอง / นักเรียน</div><div class="s">ดูผล · เกียรติบัตร</div></div></div>
+      <div class="role" data-r="school" onclick="pick('school')"><div class="ic">🏫</div><div><div class="t">โรงเรียน</div><div class="s">ภาพรวมทั้งโรงเรียน</div></div></div>
+      <div class="role" data-r="staff" onclick="pick('staff')"><div class="ic">🧑‍🏫</div><div><div class="t">เจ้าหน้าที่ / ครู</div><div class="s">จัดสอบ · กรอกผล</div></div></div>
+      <div class="role" data-r="admin" onclick="pick('admin')"><div class="ic">🛡️</div><div><div class="t">ผู้ดูแลระบบ</div><div class="s">ภาพรวม · จัดการ</div></div></div>
     </div>
-    <div class="role">
-      <div class="ic">🏫</div><h3>โรงเรียน</h3>
-      <div class="d">ดูภาพรวมผลของนักเรียนทั้งโรงเรียน เปรียบเทียบรายชั้น และดาวน์โหลดรายงาน</div>
-      <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">🔐 เข้าสู่ระบบ (สำหรับข้อมูลสด)</a>
-      <a class="btn ghost" href="school.html" style="width:100%;margin-top:8px">ดูตัวอย่างแดชบอร์ดโรงเรียน</a>
+
+    <!-- ผู้ปกครอง -->
+    <div class="panel" id="p-parent">
+      <label>รหัส/ลิงก์ผลการประเมินของบุตรหลาน (ถ้ามี)</label>
+      <input id="parentCode" placeholder="วางลิงก์ผล หรือรหัส #d=... (เว้นว่างเพื่อดูข้อมูลทั่วไป)" onkeydown="if(event.key==='Enter')go('parent')">
+      <button class="btn" onclick="go('parent')">เข้าสู่ระบบผู้ปกครอง / นักเรียน →</button>
+      <div class="hint">ลิงก์เฉพาะของบุตรหลานสถาบันจะส่งให้ทาง LINE/อีเมล · หากยังไม่มี เข้าสู่ระบบเพื่ออ่านข้อมูลการจัดสอบและแนวทางได้</div>
+      <div class="alt">หรือดูข้อมูลสดผ่านระบบกลาง · <a href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เข้าสู่ระบบ AppSheet</a></div>
     </div>
-  </div>
-  <div class="note">🔒 <b>ความเป็นส่วนตัว:</b> การเข้าดูข้อมูลสดของบุตรหลาน/โรงเรียน ต้องล็อกอินผ่านระบบกลาง (AppSheet) ซึ่งแสดงเฉพาะข้อมูลในสิทธิ์ของท่าน · ส่วน "ดูผลด่วน" ใช้รหัสเฉพาะที่สถาบันออกให้สำหรับบุตรหลานของท่านเท่านั้น</div>
+    <!-- โรงเรียน -->
+    <div class="panel" id="p-school">
+      <label>รหัสเข้าระบบโรงเรียน</label>
+      <input id="schoolCode" type="password" placeholder="กรอกรหัสที่สถาบันออกให้โรงเรียน" onkeydown="if(event.key==='Enter')go('school')">
+      <button class="btn" onclick="go('school')">เข้าสู่ระบบโรงเรียน →</button>
+      <div class="err" id="e-school">รหัสไม่ถูกต้อง กรุณาลองใหม่</div>
+      <div class="alt">ข้อมูลสดของนักเรียนทั้งโรงเรียน · <a href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เข้าสู่ระบบ AppSheet</a></div>
+    </div>
+    <!-- เจ้าหน้าที่ -->
+    <div class="panel" id="p-staff">
+      <label>รหัสเจ้าหน้าที่ / ครูผู้ประเมิน</label>
+      <input id="staffCode" type="password" placeholder="กรอกรหัสเจ้าหน้าที่" onkeydown="if(event.key==='Enter')go('staff')">
+      <button class="btn" onclick="go('staff')">เข้าสู่ระบบเจ้าหน้าที่ →</button>
+      <div class="err" id="e-staff">รหัสไม่ถูกต้อง กรุณาลองใหม่</div>
+      <div class="alt">เครื่องมือจัดสอบ/กรอกผลสด · <a href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เข้าสู่ระบบ AppSheet</a></div>
+    </div>
+    <!-- ผู้ดูแลระบบ -->
+    <div class="panel" id="p-admin">
+      <label>รหัสผู้ดูแลระบบ</label>
+      <input id="adminCode" type="password" placeholder="กรอกรหัสผู้ดูแลระบบ" onkeydown="if(event.key==='Enter')go('admin')">
+      <button class="btn" onclick="go('admin')">เข้าสู่ระบบผู้ดูแลระบบ →</button>
+      <div class="err" id="e-admin">รหัสไม่ถูกต้อง กรุณาลองใหม่</div>
+      <div class="alt">แดชบอร์ดผู้บริหาร/ข้อมูลสด · <a href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เข้าสู่ระบบ AppSheet</a></div>
+    </div>
 
-  <h2>ข้อมูลการจัดสอบ</h2>
-  <div class="round"><b>รอบที่ 1</b> · 26 ก.ค. 2569 · สนามกลางโคราช · เปิดรับสมัครแล้ว</div>
-  <div class="round"><b>รอบที่ 2</b> · 23 ส.ค. 2569 · สนามกลางโคราช</div>
-  <div class="round"><b>รอบที่ 3</b> · 27 ก.ย. 2569 · สนามกลางโคราช</div>
-  <div class="note">สิ่งที่ต้องเตรียม: มาก่อนเวลาสอบ 20 นาที · นำใบนัด/บัตรประจำตัว · ให้เด็กพักผ่อนเพียงพอ ทานอาหารเช้า · การประเมินอยู่ในรูปกิจกรรมเล่น-เรียนรู้ ไม่กดดันเด็ก</div>
-  <div class="links">
-    <a class="btn" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Register.html" target="_blank" rel="noopener">📝 สมัคร / จองรอบสอบ</a>
-    <a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Verify.html" target="_blank" rel="noopener">🔎 ตรวจสอบเกียรติบัตร</a>
+    <div class="lock" id="hello">🔒 ระบบแสดงเฉพาะข้อมูลในสิทธิ์ของแต่ละบทบาท · ข้อมูลส่วนตัวจริงเข้าถึงได้หลังล็อกอินระบบกลาง (AppSheet)</div>
   </div>
-
-  <h2>คำอธิบายข้อสอบ 5 ห้อง</h2>
-  <div class="cards">
-    <div class="card" style="--c:#9C7B3F"><div class="ic">🇹🇭</div><div class="nm">ห้อง 1 · ภาษาไทย</div><div class="ds">ฟัง-พูด สื่อสาร · อ่าน-เขียนเบื้องต้น · เล่าเรื่อง/คำศัพท์ตามวัย</div></div>
-    <div class="card" style="--c:#E07A2F"><div class="ic">🔤</div><div class="nm">ห้อง 2 · ภาษาอังกฤษ</div><div class="ds">เทียบมาตรฐาน CEFR (Pre-A1/A1/A2) · ฟัง คำศัพท์ ประโยคง่าย</div></div>
-    <div class="card" style="--c:#1A7F5A"><div class="ic">🔢</div><div class="nm">ห้อง 3 · คณิต-ตรรกะ</div><div class="ds">จำนวน-นับ · รูปทรง · แบบรูป · เชาวน์เชิงตรรกะแนวสาธิต</div></div>
-    <div class="card" style="--c:#3457B2"><div class="ic">🧠</div><div class="nm">ห้อง 4 · EF / เชาวน์</div><div class="ds">ความจำใช้งาน · ยับยั้งชั่งใจ · ยืดหยุ่นความคิด · เมทริกซ์</div></div>
-    <div class="card" style="--c:#8A4FB3"><div class="ic">✋</div><div class="nm">ห้อง 5 · กล้ามเนื้อ</div><div class="ds">มัดใหญ่ (ทรงตัว ประสานงาน) · มัดเล็ก (เขียน-ตัด-วาด)</div></div>
-  </div>
-  <div class="note">วัด 5 สมรรถนะ คิดคะแนนถ่วงน้ำหนัก (ไทย20 · อังกฤษ20 · คณิต25 · EF20 · กล้ามเนื้อ15) แล้วจัดระดับ <b>Star Path 7 ดาว</b> · ดูตัวอย่าง <a href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Parent_Report.html" target="_blank" rel="noopener">รายงานผล</a> และ <a href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Certificate_Premium.html" target="_blank" rel="noopener">เกียรติบัตร</a></div>
-
-  <footer>BrightStar Assessment Institute · พอร์ทัลผู้ปกครอง &amp; โรงเรียน · รับรองวิชาการโดยมหาวิทยาลัยวงษ์ชวลิตกุล</footer>
+  <div class="foot">BrightStar Assessment Institute · รับรองวิชาการโดยมหาวิทยาลัยวงษ์ชวลิตกุล</div>
 </div>
 <script>
-function goParent(){
- var v=document.getElementById('pcode').value.trim();
- if(!v){alert('วางรหัส/ลิงก์ผลที่สถาบันส่งให้ก่อนค่ะ');return;}
- var code=v;
- var m=v.match(/[#?]d=([^&]+)/); if(m) code=m[1];           // ถ้าวางทั้งลิงก์ ดึง token ออกมา
- location.href='parent.html#d='+code;
+/* รหัสเข้าระบบ (สถาบันแก้ไขได้ที่นี่) — เป็นรหัสอำนวยความสะดวก ไม่ใช่ระบบรักษาความปลอดภัยจริง
+   ข้อมูลส่วนตัวจริงอยู่หลังการล็อกอินระบบกลาง (AppSheet) เท่านั้น */
+var ACCESS={school:'school2569', staff:'staff2569', admin:'admin2569'};
+var cur=null;
+function pick(r){
+ cur=r;
+ var cards=document.querySelectorAll('.role');
+ for(var i=0;i<cards.length;i++){cards[i].classList.toggle('sel',cards[i].getAttribute('data-r')===r);}
+ var ps=document.querySelectorAll('.panel');
+ for(var j=0;j<ps.length;j++){ps[j].classList.remove('on');}
+ document.getElementById('p-'+r).classList.add('on');
+ document.getElementById('hello').style.display='none';
+ var f={parent:'parentCode',school:'schoolCode',staff:'staffCode',admin:'adminCode'}[r];
+ setTimeout(function(){var i=document.getElementById(f);if(i)i.focus();},60);
+}
+function setRole(r){try{sessionStorage.setItem('bsi_role',r);}catch(e){}}
+function go(r){
+ if(r==='parent'){
+  setRole('parent');
+  var v=(document.getElementById('parentCode').value||'').trim();
+  if(v){var m=v.match(/[#?]d=([^&]+)/);var code=m?m[1]:v;location.href='parent.html#d='+code;}
+  else location.href='parent.html';
+  return;
+ }
+ var code=(document.getElementById(r+'Code').value||'').trim();
+ if(code===ACCESS[r]){setRole(r);location.href=r+'.html';}
+ else{document.getElementById('e-'+r).style.display='block';}
 }
 </script>
 </body></html>

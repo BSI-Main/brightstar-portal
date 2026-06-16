@@ -1,0 +1,59 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>แดชบอร์ดเจ้าหน้าที่ / ครู · BrightStar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB}
+*{box-sizing:border-box}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
+.bar{background:#241B12;color:#FBF7EE;font-size:13px;padding:8px 16px;display:flex;gap:16px;align-items:center;border-bottom:2px solid #C9A961;flex-wrap:wrap}
+.bar a{color:#FBF7EE;text-decoration:none;cursor:pointer}.bar a.h{color:#C9A961;font-weight:700}.bar .sp{margin-left:auto}
+.hero{background:linear-gradient(160deg,#5C3A22,#9C7B3F 130%);color:#fff;text-align:center;padding:28px 18px 22px;border-bottom:3px solid var(--gold)}
+.hero img{width:64px;background:#FFFDF7;border-radius:13px;padding:6px}
+.hero .k{letter-spacing:3px;font-size:11px;font-weight:700;color:#ffe9b0;margin-top:6px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:27px;margin:3px 0 0}
+.wrap{max-width:880px;margin:0 auto;padding:18px 16px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 4px 16px rgba(120,80,20,.07)}
+.sec-h{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:21px;margin:0 0 10px;border-left:5px solid var(--gold);padding-left:10px}
+.btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:24px;font-size:14.5px;border:0;cursor:pointer;font-family:inherit}
+.login{text-align:center;background:linear-gradient(135deg,#FBF7EE,#F2E7CF);border:1px solid var(--gold)}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.tool{display:block;background:#fff;border:1px solid var(--line);border-top:4px solid var(--c,#9C7B3F);border-radius:14px;padding:15px;text-decoration:none;color:var(--ink)}
+.tool:hover{box-shadow:0 6px 18px rgba(120,80,20,.12)}
+.tool .ic{font-size:26px}.tool .nm{font-weight:700;color:var(--c,#9C7B3F);font-size:15.5px;margin-top:4px}.tool .ds{font-size:12.5px;color:var(--grey);margin-top:3px}
+.note{background:var(--paper);border-left:4px solid var(--gold);border-radius:9px;padding:11px 14px;font-size:13px;color:var(--grey);margin-top:10px}
+footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
+#gate{position:fixed;inset:0;background:linear-gradient(160deg,#5C3A22,#9C7B3F);color:#fff;z-index:99999;display:none;align-items:center;justify-content:center;text-align:center;padding:24px}
+#gate img{width:84px;background:#fff;border-radius:16px;padding:8px}#gate h2{font-family:"Cormorant Garamond",serif;font-size:26px;margin:12px 0 4px}
+#gate a{display:inline-block;background:var(--gold);color:#241B12;font-weight:700;padding:12px 26px;border-radius:26px;text-decoration:none;margin-top:10px}
+</style></head><body>
+<div id="gate"><div><img src="logo.png" alt="logo"><h2>ต้องเข้าสู่ระบบก่อน</h2><p>กรุณาเข้าสู่ระบบในฐานะ "เจ้าหน้าที่/ครู" เพื่อเข้าหน้านี้</p><a href="index.html">ไปหน้าเข้าสู่ระบบ →</a></div></div>
+<div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="index.html">เข้าสู่ระบบ</a><span class="sp"></span><a onclick="bsiLogout()">ออกจากระบบ ⎋</a></div>
+<div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แดชบอร์ดเจ้าหน้าที่ / ครูผู้ประเมิน</h1></div>
+<div class="wrap">
+  <div class="card login">
+    <div style="font-size:34px">🧑‍🏫🔐</div>
+    <div class="sec-h" style="border:0;text-align:center;padding:0">เข้าสู่ระบบจัดสอบ/กรอกผล (ข้อมูลสด)</div>
+    <p style="color:var(--grey);font-size:14px;margin:4px 0 12px">ลงทะเบียนนักเรียน บันทึกคะแนนรายห้อง และออกลิงก์ผลให้ผู้ปกครอง ผ่านระบบกลาง</p>
+    <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เปิดระบบกลาง (AppSheet) →</a>
+  </div>
+
+  <div class="card">
+    <div class="sec-h">เครื่องมือจัดสอบ &amp; กรอกผล</div>
+    <div class="tools">
+      <a class="tool" style="--c:#9C7B3F" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Staff_Console.html" target="_blank" rel="noopener"><div class="ic">📝</div><div class="nm">คอนโซลเจ้าหน้าที่</div><div class="ds">ลงทะเบียน + กรอกคะแนน 5 ห้อง → ออกลิงก์ผลให้ผู้ปกครอง</div></a>
+      <a class="tool" style="--c:#1A7F5A" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Test_Hub.html" target="_blank" rel="noopener"><div class="ic">🎛️</div><div class="nm">ศูนย์ควบคุมการสอบ</div><div class="ds">เข้าชุดข้อสอบ/Test Kit ทั้ง 5 ห้อง + แดชบอร์ดคุมสอบ</div></a>
+      <a class="tool" style="--c:#E07A2F" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Templates.html" target="_blank" rel="noopener"><div class="ic">💬</div><div class="nm">ศูนย์ข้อความสื่อสาร</div><div class="ds">ข้อความ LINE/อีเมลพร้อมใช้ (นัดสอบ แจ้งผล ติดตาม)</div></a>
+      <a class="tool" style="--c:#3457B2" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Register.html" target="_blank" rel="noopener"><div class="ic">📋</div><div class="nm">รับสมัคร / จองรอบสอบ</div><div class="ds">ลงทะเบียนเด็กเข้าสอบรายคน/ทั้งโรงเรียน</div></a>
+      <a class="tool" style="--c:#8A4FB3" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Reports_Batch.html" target="_blank" rel="noopener"><div class="ic">🖨️</div><div class="nm">ออกรายงานเป็นชุด</div><div class="ds">พิมพ์รายงานผล/เกียรติบัตรหลายคนพร้อมกัน</div></a>
+      <a class="tool" style="--c:#6E6353" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_DataFlow_Guide.html" target="_blank" rel="noopener"><div class="ic">🔄</div><div class="nm">คู่มือการไหลข้อมูล</div><div class="ds">ขั้นตอน เว็บ→CSV→ชีต→AppSheet→แดชบอร์ด</div></a>
+    </div>
+    <div class="note">ลิงก์ "ผลผู้ปกครอง" ที่ออกจากคอนโซลเจ้าหน้าที่ ใช้เปิดในพอร์ทัลนี้ได้ทันที (หน้าเข้าสู่ระบบผู้ปกครองดึงรหัสจากลิงก์อัตโนมัติ)</div>
+  </div>
+
+  <div id="examinfo"></div>
+  <footer>BrightStar Assessment Institute · แดชบอร์ดเจ้าหน้าที่ · ข้อมูลสดเข้าถึงได้หลังล็อกอินระบบกลาง</footer>
+</div>
+<script>function bsiLogout(){try{sessionStorage.removeItem('bsi_role');}catch(e){}location.href='index.html';}
+(function(){var r=null;try{r=sessionStorage.getItem('bsi_role')}catch(e){}; if(['staff','admin'].indexOf(r)<0){document.getElementById('gate').style.display='flex';document.body.style.overflow='hidden';}})();</script>
+<script src="examinfo.js"></script>
+<script>if(window.renderExamInfo)renderExamInfo('examinfo');</script>
+</body></html>

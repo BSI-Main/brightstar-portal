@@ -5,7 +5,7 @@
 :root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB;--green:#2E7D32}
 *{box-sizing:border-box}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
 .bar{background:#241B12;color:#FBF7EE;font-size:13px;padding:8px 16px;display:flex;gap:16px;align-items:center;border-bottom:2px solid #C9A961;flex-wrap:wrap}
-.bar a{color:#FBF7EE;text-decoration:none}.bar a.h{color:#C9A961;font-weight:700}
+.bar a{color:#FBF7EE;text-decoration:none;cursor:pointer}.bar a.h{color:#C9A961;font-weight:700}.bar .sp{margin-left:auto}
 .hero{background:linear-gradient(160deg,#5C3A22,#9C7B3F 130%);color:#fff;text-align:center;padding:28px 18px 22px;border-bottom:3px solid var(--gold)}
 .hero img{width:64px;background:#FFFDF7;border-radius:13px;padding:6px}
 .hero .k{letter-spacing:3px;font-size:11px;font-weight:700;color:#ffe9b0;margin-top:6px}
@@ -20,23 +20,27 @@
 .kpi{background:var(--paper);border-radius:13px;padding:14px;text-align:center;border-top:4px solid var(--gold)}
 .kpi .n{font-size:30px;font-weight:700;color:var(--berry);line-height:1}.kpi .l{font-size:12.5px;color:var(--grey);margin-top:4px}
 .demo{font-size:11px;font-weight:700;color:#fff;background:var(--grey);border-radius:20px;padding:2px 10px;display:inline-block;margin-left:8px;vertical-align:middle}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
-th,td{padding:8px 9px;text-align:center;border-bottom:1px solid var(--line)}th{background:var(--deep);color:#FBF7EE;font-weight:600}
-td:first-child,th:first-child{text-align:left}tr:nth-child(even) td{background:#FCFAF4}
+table.cmp{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+table.cmp th,table.cmp td{padding:8px 9px;text-align:center;border-bottom:1px solid var(--line)}table.cmp th{background:var(--deep);color:#FBF7EE;font-weight:600}
+table.cmp td:first-child,table.cmp th:first-child{text-align:left}table.cmp tr:nth-child(even) td{background:#FCFAF4}
 .lvchip{display:inline-block;border-radius:14px;padding:2px 10px;font-size:12.5px;font-weight:700;background:var(--gold);color:#241B12}
 .dom{margin:9px 0}.dom .top{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:3px}.dom .sc{font-weight:700;color:var(--berry)}
 .track{height:12px;background:var(--paper);border-radius:9px;overflow:hidden}.fill{height:100%;border-radius:9px;background:linear-gradient(90deg,var(--gold),var(--berry))}
 .note{background:var(--paper);border-left:4px solid var(--gold);border-radius:9px;padding:11px 14px;font-size:13px;color:var(--grey);margin-top:10px}
 footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
+#gate{position:fixed;inset:0;background:linear-gradient(160deg,#5C3A22,#9C7B3F);color:#fff;z-index:99999;display:none;align-items:center;justify-content:center;text-align:center;padding:24px}
+#gate img{width:84px;background:#fff;border-radius:16px;padding:8px}#gate h2{font-family:"Cormorant Garamond",serif;font-size:26px;margin:12px 0 4px}
+#gate a{display:inline-block;background:var(--gold);color:#241B12;font-weight:700;padding:12px 26px;border-radius:26px;text-decoration:none;margin-top:10px}
 </style></head><body>
-<div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="index.html">หน้าแรกพอร์ทัล</a></div>
+<div id="gate"><div><img src="logo.png" alt="logo"><h2>ต้องเข้าสู่ระบบก่อน</h2><p>กรุณาเข้าสู่ระบบในฐานะ "โรงเรียน" เพื่อเข้าหน้านี้</p><a href="index.html">ไปหน้าเข้าสู่ระบบ →</a></div></div>
+<div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="index.html">เข้าสู่ระบบ</a><span class="sp"></span><a onclick="bsiLogout()">ออกจากระบบ ⎋</a></div>
 <div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แดชบอร์ดโรงเรียน</h1></div>
 <div class="wrap">
   <div class="card login">
     <div style="font-size:34px">🏫🔐</div>
     <div class="sec-h" style="border:0;text-align:center;padding:0">เข้าสู่ระบบสำหรับข้อมูลสด</div>
     <p style="color:var(--grey);font-size:14px;margin:4px 0 12px">ผู้ดูแลของโรงเรียนล็อกอินด้วยอีเมลที่ลงทะเบียนไว้กับสถาบัน เพื่อดูผลนักเรียน "เฉพาะโรงเรียนของท่าน" แบบเรียลไทม์ ดาวน์โหลดรายงาน และเปรียบเทียบรายชั้น</p>
-    <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เข้าสู่ระบบโรงเรียน →</a>
+    <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เข้าสู่ระบบโรงเรียน (AppSheet) →</a>
   </div>
 
   <div class="card">
@@ -62,7 +66,7 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 
   <div class="card">
     <div class="sec-h">เปรียบเทียบรายชั้น <span class="demo">ตัวอย่าง</span></div>
-    <table>
+    <table class="cmp">
       <tr><th>ระดับชั้น</th><th>จำนวน</th><th>คะแนนเฉลี่ย</th><th>ระดับเฉลี่ย</th></tr>
       <tr><td>อนุบาล 1</td><td>40</td><td>66</td><td><span class="lvchip">★ III</span></td></tr>
       <tr><td>อนุบาล 2</td><td>44</td><td>72</td><td><span class="lvchip">★ IV</span></td></tr>
@@ -74,11 +78,17 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
     <div class="sec-h">รายงาน &amp; เอกสาร</div>
     <p style="color:var(--grey);font-size:14px;margin:0 0 8px">ดาวน์โหลดรายงานสรุปทั้งโรงเรียน (PDF) และข้อมูลรายคน (CSV) ได้จากในระบบกลางหลังล็อกอิน · เอกสาร MOU/ใบเสนอราคา/ใบเสร็จ ติดต่อสถาบัน</p>
     <div class="btns">
-      <a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Progress.html" target="_blank" rel="noopener">📈 ดูตัวอย่างรายงานพัฒนาการ</a>
+      <a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Progress.html" target="_blank" rel="noopener">📈 ตัวอย่างรายงานพัฒนาการ</a>
+      <a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_School_Dashboard.html" target="_blank" rel="noopener">🏫 ตัวอย่างแดชบอร์ดโรงเรียน</a>
       <a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Register.html" target="_blank" rel="noopener">📝 จัดสอบทั้งโรงเรียน</a>
-      <a class="btn ghost" href="index.html">← กลับหน้าพอร์ทัล</a>
     </div>
   </div>
+
+  <div id="examinfo"></div>
   <footer>BrightStar Assessment Institute · แดชบอร์ดโรงเรียน · ข้อมูลแสดงเฉพาะสิทธิ์ของโรงเรียนหลังล็อกอิน</footer>
 </div>
+<script>function bsiLogout(){try{sessionStorage.removeItem('bsi_role');}catch(e){}location.href='index.html';}
+(function(){var r=null;try{r=sessionStorage.getItem('bsi_role')}catch(e){}; if(['school','admin'].indexOf(r)<0){document.getElementById('gate').style.display='flex';document.body.style.overflow='hidden';}})();</script>
+<script src="examinfo.js"></script>
+<script>if(window.renderExamInfo)renderExamInfo('examinfo');</script>
 </body></html>

@@ -33,7 +33,9 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 <div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="index.html">หน้าแรกพอร์ทัล</a></div>
 <div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แดชบอร์ดผลของบุตรหลาน</h1></div>
 <div class="wrap" id="app"></div>
+<div class="wrap" style="padding-top:0"><div id="examinfo"></div></div>
 <footer>BrightStar Assessment Institute · ข้อมูลนี้เป็นความลับเฉพาะครอบครัว · เปิดจากลิงก์/รหัสเฉพาะของบุตรหลานท่าน</footer>
+<script src="examinfo.js"></script>
 <script>
 var W={th:20,en:20,ma:25,ef:20,mo:15};
 var NAMES={th:["🇹🇭","ภาษาไทย"],en:["🔤","ภาษาอังกฤษ"],ma:["🔢","คณิต-ตรรกะ"],ef:["🧠","EF / เชาวน์"],mo:["✋","กล้ามเนื้อ"]};
@@ -66,6 +68,6 @@ function render(){
  +'<div class="card"><div class="sec-h">ข้อมูลการจัดสอบ &amp; คำอธิบายข้อสอบ</div><p style="font-size:13.5px;color:var(--grey);margin:0 0 6px">รอบถัดไป: 23 ส.ค. 2569 · สนามกลางโคราช — วัดซ้ำเพื่อดูพัฒนาการได้</p>'+ROOMS+'<div class="btns" style="margin-top:12px"><a class="btn ghost" href="index.html">← กลับหน้าพอร์ทัล</a><a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Register.html" target="_blank" rel="noopener">จองรอบถัดไป</a></div></div>';
 }
 function gogate(){var v=document.getElementById('g').value.trim();if(!v)return;var c=v;var m=v.match(/[#?]d=([^&]+)/);if(m)c=m[1];location.hash='d='+c;render();}
-window.addEventListener('hashchange',render);render();
+window.addEventListener('hashchange',render);render();if(window.renderExamInfo)renderExamInfo('examinfo');
 </script>
 </body></html>
