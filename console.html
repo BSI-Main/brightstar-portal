@@ -94,6 +94,7 @@ tr:nth-child(even) td{background:#FCFAF4}.tblwrap{overflow:auto;max-height:420px
     <div class="sec-h">รายชื่อนักเรียน (<span id="cnt">0</span>)</div>
     <div class="btns" style="margin:0 0 10px">
       <button class="btn gold sm" onclick="exportCSV()">⬇ ส่งออก CSV (เข้า AppSheet/ชีต)</button>
+      <button class="btn ghost sm" onclick="document.getElementById('csvFile').click()">⬆ นำเข้า CSV</button><input type="file" id="csvFile" accept=".csv" style="display:none" onchange="importCSV(this)">
       <button class="btn ghost sm" onclick="loadDemo()">เติมข้อมูลตัวอย่าง 3 คน</button>
       <button class="btn red sm" onclick="clearAll()">ล้างข้อมูลทั้งหมด</button>
     </div>
@@ -201,6 +202,38 @@ function render(){
   +'<button class="btn ghost sm" onclick="edit(\''+r.id+'\')">แก้ไข</button> '
   +'<button class="btn red sm" onclick="del(\''+r.id+'\')">ลบ</button></td></tr>';}).join('');
  document.getElementById('tbody').innerHTML=rows||'<tr><td colspan="7" class="muted" style="text-align:center;padding:18px">ยังไม่มีข้อมูล — เพิ่มนักเรียนด้านบน หรือกด "เติมข้อมูลตัวอย่าง"</td></tr>';
+}
+function parseCSV(txt){
+ txt=txt.replace(/^﻿/,'');var rows=[],row=[],cur='',q=false;
+ for(var i=0;i<txt.length;i++){var c=txt[i];
+  if(q){if(c==='"'){if(txt[i+1]==='"'){cur+='"';i++;}else q=false;}else cur+=c;}
+  else{if(c==='"')q=true;else if(c===','){row.push(cur);cur='';}else if(c==='\n'){row.push(cur);rows.push(row);row=[];cur='';}else if(c==='\r'){}else cur+=c;}}
+ if(cur!==''||row.length){row.push(cur);rows.push(row);}
+ return rows.filter(function(r){return r.some(function(x){return (x||'').trim()!=='';});});
+}
+function importCSV(input){
+ var file=input.files&&input.files[0];if(!file)return;
+ var rd=new FileReader();
+ rd.onload=function(){
+  try{
+   var rows=parseCSV(rd.result);if(rows.length<2){toast('ไฟล์ว่างหรือไม่มีข้อมูล');input.value='';return;}
+   var H=rows[0].map(function(x){return (x||'').trim();});
+   function col(name){return H.indexOf(name);}
+   var ci={id:col('รหัสนักเรียน'),name:col('ชื่อ-สกุล'),sch:col('โรงเรียน'),cls:col('ระดับชั้น'),tam:col('ตำบล'),amp:col('อำเภอ'),pro:col('จังหวัด'),par:col('ผู้ปกครอง'),con:col('ติดต่อ'),th:col('ไทย'),en:col('อังกฤษ'),ma:col('คณิต'),ef:col('EF'),mo:col('กล้ามเนื้อ'),dt:col('วันที่ประเมิน')};
+   if(ci.name<0){toast('ไม่พบคอลัมน์ "ชื่อ-สกุล" — ใช้ไฟล์ที่ส่งออกจากระบบนี้');input.value='';return;}
+   var a=load(),add=0,upd=0;
+   function g(r,k){return ci[k]>=0?(r[ci[k]]||'').trim():'';}
+   for(var i=1;i<rows.length;i++){var r=rows[i];var name=g(r,'name');if(!name)continue;
+    var id=g(r,'id')||genId();
+    var rec={id:id,name:name,sch:g(r,'sch'),cls:g(r,'cls'),tam:g(r,'tam'),amp:g(r,'amp'),pro:g(r,'pro'),par:g(r,'par'),con:g(r,'con'),dt:g(r,'dt'),
+      scores:{th:num(g(r,'th')),en:num(g(r,'en')),ma:num(g(r,'ma')),ef:num(g(r,'ef')),mo:num(g(r,'mo'))}};
+    var j=a.findIndex(function(x){return x.id===id;});
+    if(j>=0){a[j]=rec;upd++;}else{a.push(rec);add++;}}
+   store(a);fillSchoolList();render();toast('นำเข้าแล้ว: เพิ่ม '+add+' · อัปเดต '+upd);
+  }catch(e){toast('นำเข้าไม่สำเร็จ: '+e.message);}
+  input.value='';
+ };
+ rd.readAsText(file,'utf-8');
 }
 function exportCSV(){
  var a=load();if(!a.length){toast('ยังไม่มีข้อมูลให้ส่งออก');return;}

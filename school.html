@@ -46,32 +46,23 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
   <div class="card">
     <div class="sec-h">ตัวอย่างภาพรวมทั้งโรงเรียน <span class="demo">ตัวอย่าง / DEMO</span></div>
     <div class="kpis">
-      <div class="kpi"><div class="n">128</div><div class="l">นักเรียนที่ประเมิน</div></div>
-      <div class="kpi"><div class="n">72</div><div class="l">คะแนนเฉลี่ยรวม</div></div>
-      <div class="kpi"><div class="n">★ IV</div><div class="l">ระดับเฉลี่ย (ดาวเด่น)</div></div>
-      <div class="kpi"><div class="n">31%</div><div class="l">ถึงระดับ V ขึ้นไป</div></div>
+      <div class="kpi"><div class="n" id="sk_stu">128</div><div class="l">นักเรียนที่ประเมิน</div></div>
+      <div class="kpi"><div class="n" id="sk_avg">72</div><div class="l">คะแนนเฉลี่ยรวม</div></div>
+      <div class="kpi"><div class="n" id="sk_lvl">★ IV</div><div class="l">ระดับเฉลี่ย</div></div>
+      <div class="kpi"><div class="n" id="sk_top">31%</div><div class="l">ถึงระดับ V ขึ้นไป</div></div>
     </div>
     <div class="note">ตัวเลขนี้เป็นข้อมูลตัวอย่างเพื่อแสดงรูปแบบหน้าจอ — ข้อมูลจริงของโรงเรียนท่านจะปรากฏหลังล็อกอินผ่านระบบกลาง</div>
   </div>
 
   <div class="card">
     <div class="sec-h">ค่าเฉลี่ย 5 สมรรถนะของโรงเรียน <span class="demo">ตัวอย่าง</span></div>
-    <div class="dom"><div class="top"><b>🇹🇭 ภาษาไทย</b><span class="sc">75/100</span></div><div class="track"><div class="fill" style="width:75%"></div></div></div>
-    <div class="dom"><div class="top"><b>🔤 ภาษาอังกฤษ</b><span class="sc">64/100</span></div><div class="track"><div class="fill" style="width:64%"></div></div></div>
-    <div class="dom"><div class="top"><b>🔢 คณิต-ตรรกะ</b><span class="sc">71/100</span></div><div class="track"><div class="fill" style="width:71%"></div></div></div>
-    <div class="dom"><div class="top"><b>🧠 EF / เชาวน์</b><span class="sc">69/100</span></div><div class="track"><div class="fill" style="width:69%"></div></div></div>
-    <div class="dom"><div class="top"><b>✋ กล้ามเนื้อ</b><span class="sc">78/100</span></div><div class="track"><div class="fill" style="width:78%"></div></div></div>
+    <div id="sdoms"></div>
     <div class="note"><b>อ่านผล:</b> จุดเด่นของโรงเรียนคือกล้ามเนื้อและภาษาไทย · ด้านที่ควรเสริมแผนคือภาษาอังกฤษ — ใช้วางแผนหลักสูตร/กิจกรรมรายชั้นได้</div>
   </div>
 
   <div class="card">
     <div class="sec-h">เปรียบเทียบรายชั้น <span class="demo">ตัวอย่าง</span></div>
-    <table class="cmp">
-      <tr><th>ระดับชั้น</th><th>จำนวน</th><th>คะแนนเฉลี่ย</th><th>ระดับเฉลี่ย</th></tr>
-      <tr><td>อนุบาล 1</td><td>40</td><td>66</td><td><span class="lvchip">★ III</span></td></tr>
-      <tr><td>อนุบาล 2</td><td>44</td><td>72</td><td><span class="lvchip">★ IV</span></td></tr>
-      <tr><td>อนุบาล 3</td><td>44</td><td>78</td><td><span class="lvchip">★ V</span></td></tr>
-    </table>
+    <table class="cmp"><thead><tr><th>ระดับชั้น</th><th>จำนวน</th><th>คะแนนเฉลี่ย</th><th>ระดับเฉลี่ย</th></tr></thead><tbody id="sclass"></tbody></table>
   </div>
 
   <div class="card">
@@ -89,6 +80,44 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 </div>
 <script>function bsiLogout(){try{sessionStorage.removeItem('bsi_role');}catch(e){}location.href='index.html';}
 (function(){var r=null,sc=null;try{r=sessionStorage.getItem('bsi_role');sc=sessionStorage.getItem('bsi_school');}catch(e){}; if(['school','admin'].indexOf(r)<0){document.getElementById('gate').style.display='flex';document.body.style.overflow='hidden';return;} if(sc){var el=document.getElementById('schName'); if(el) el.textContent='โรงเรียน: '+sc;}})();</script>
+<script>
+(function(){
+ var W={th:20,en:20,ma:25,ef:20,mo:15};
+ var NAMES={th:['🇹🇭','ภาษาไทย'],en:['🔤','ภาษาอังกฤษ'],ma:['🔢','คณิต-ตรรกะ'],ef:['🧠','EF / เชาวน์'],mo:['✋','กล้ามเนื้อ']};
+ var LV=[[96,'VII'],[88,'VI'],[78,'V'],[65,'IV'],[50,'III'],[35,'II'],[0,'I']];var RN={I:1,II:2,III:3,IV:4,V:5,VI:6,VII:7};
+ function lvR(w){for(var i=0;i<LV.length;i++)if(w>=LV[i][0])return LV[i][1];return 'I';}
+ function wt(s){var sum=0,w=0;for(var k in W){if(s&&s[k]!=null&&s[k]!=='' ){sum+=Number(s[k])*W[k];w+=W[k];}}return w?Math.round(sum/w):null;}
+ // demo defaults
+ var demoDom={th:75,en:64,ma:71,ef:69,mo:78};
+ var demoClass=[['อนุบาล 1',40,66],['อนุบาล 2',44,72],['อนุบาล 3',44,78]];
+ var real=false,dom=demoDom,classes=demoClass,stu=128,avg=72,lvl='IV',top=31;
+ var school=null;try{school=sessionStorage.getItem('bsi_school');}catch(e){}
+ var a=[];try{a=JSON.parse(localStorage.getItem('bsi_console_v1')||'[]');}catch(e){}
+ var recs=a.filter(function(r){return wt(r.scores)!=null && (!school || r.sch===school);});
+ if(recs.length){
+  real=true;
+  // domain averages
+  dom={};for(var k in W){var vs=recs.map(function(r){return r.scores&&r.scores[k]!=null&&r.scores[k]!==''?Number(r.scores[k]):null;}).filter(function(x){return x!=null;});dom[k]=vs.length?Math.round(vs.reduce(function(x,y){return x+y;},0)/vs.length):0;}
+  var ws=recs.map(function(r){return wt(r.scores);});
+  stu=recs.length;avg=Math.round(ws.reduce(function(x,y){return x+y;},0)/ws.length);lvl=lvR(avg);
+  top=Math.round(ws.filter(function(w){return RN[lvR(w)]>=5;}).length/ws.length*100);
+  // by class
+  var byc={};recs.forEach(function(r){var c=r.cls||'(ไม่ระบุชั้น)';(byc[c]=byc[c]||[]).push(wt(r.scores));});
+  classes=Object.keys(byc).map(function(c){var arr=byc[c];var av=Math.round(arr.reduce(function(x,y){return x+y;},0)/arr.length);return [c,arr.length,av];});
+ }
+ // render KPIs
+ document.getElementById('sk_stu').textContent=stu;
+ document.getElementById('sk_avg').textContent=avg;
+ document.getElementById('sk_lvl').textContent='★ '+lvl;
+ document.getElementById('sk_top').textContent=top+'%';
+ // render domains
+ document.getElementById('sdoms').innerHTML=Object.keys(W).map(function(k){var v=dom[k]||0;return '<div class="dom"><div class="top"><b>'+NAMES[k][0]+' '+NAMES[k][1]+'</b><span class="sc">'+v+'/100</span></div><div class="track"><div class="fill" style="width:'+v+'%"></div></div></div>';}).join('');
+ // render classes
+ document.getElementById('sclass').innerHTML=classes.map(function(c){return '<tr><td>'+c[0]+'</td><td>'+c[1]+'</td><td>'+c[2]+'</td><td><span class="lvchip">★ '+lvR(c[2])+'</span></td></tr>';}).join('');
+ // toggle demo chips
+ if(real){var ch=document.querySelectorAll('.demo');for(var i=0;i<ch.length;i++){ch[i].textContent='ข้อมูลจริง'+(school?' · '+school:'');ch[i].style.background='#2E7D32';}}
+})();
+</script>
 <script src="examinfo.js"></script>
 <script>if(window.renderExamInfo)renderExamInfo('examinfo');</script>
 </body></html>

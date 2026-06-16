@@ -50,14 +50,14 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
   </div>
 
   <div class="card">
-    <div class="sec-h">ภาพรวมทั้งระบบ <span class="demo">ตัวอย่าง / DEMO</span></div>
+    <div class="sec-h">ภาพรวมทั้งระบบ <span class="demo" id="ov_tag">ตัวอย่าง / DEMO</span></div>
     <div class="kpis">
-      <div class="kpi"><div class="n">12</div><div class="l">โรงเรียนในระบบ</div></div>
-      <div class="kpi"><div class="n">1,480</div><div class="l">นักเรียนที่ประเมิน</div></div>
-      <div class="kpi"><div class="n">3</div><div class="l">รอบสอบปีนี้</div></div>
-      <div class="kpi"><div class="n">1,392</div><div class="l">เกียรติบัตรที่ออก</div></div>
+      <div class="kpi"><div class="n" id="k_sch">12</div><div class="l">โรงเรียนในระบบ</div></div>
+      <div class="kpi"><div class="n" id="k_stu">1,480</div><div class="l">นักเรียนที่ประเมิน</div></div>
+      <div class="kpi"><div class="n" id="k_round">3</div><div class="l">รอบสอบปีนี้</div></div>
+      <div class="kpi"><div class="n" id="k_cert">1,392</div><div class="l">เกียรติบัตรที่ออก</div></div>
     </div>
-    <div class="note">ตัวเลขนี้เป็นข้อมูลตัวอย่าง — ข้อมูลจริงทั้งระบบจะปรากฏหลังล็อกอินระบบกลาง (สิทธิ์ผู้ดูแล)</div>
+    <div class="note" id="ov_note">ตัวเลขนี้เป็นข้อมูลตัวอย่าง — ข้อมูลจริงทั้งระบบจะปรากฏหลังล็อกอินระบบกลาง (สิทธิ์ผู้ดูแล) หรือเมื่อเริ่มกรอกข้อมูลในแดชบอร์ดเจ้าหน้าที่</div>
   </div>
 
   <div class="card">
@@ -79,6 +79,24 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 </div>
 <script>function bsiLogout(){try{sessionStorage.removeItem('bsi_role');}catch(e){}location.href='index.html';}
 (function(){var r=null;try{r=sessionStorage.getItem('bsi_role')}catch(e){}; if(['admin'].indexOf(r)<0){document.getElementById('gate').style.display='flex';document.body.style.overflow='hidden';}})();</script>
+<script>
+(function(){
+ var W={th:20,en:20,ma:25,ef:20,mo:15};
+ var LV=[[96,'VII'],[88,'VI'],[78,'V'],[65,'IV'],[50,'III'],[35,'II'],[0,'I']];var RN={I:1,II:2,III:3,IV:4,V:5,VI:6,VII:7};
+ function lvR(w){for(var i=0;i<LV.length;i++)if(w>=LV[i][0])return LV[i][1];return 'I';}
+ function wt(s){var sum=0,w=0;for(var k in W){if(s&&s[k]!=null&&s[k]!==''){sum+=Number(s[k])*W[k];w+=W[k];}}return w?Math.round(sum/w):null;}
+ var a=[];try{a=JSON.parse(localStorage.getItem('bsi_console_v1')||'[]');}catch(e){}
+ if(!a.length)return; // keep demo numbers when no entered data
+ var ws=a.map(function(r){return wt(r.scores);}).filter(function(x){return x!=null;});
+ var schools={};a.forEach(function(r){if(r.sch)schools[r.sch]=1;});
+ var nSch=Object.keys(schools).length;try{var sl=JSON.parse(localStorage.getItem('bsi_schools')||'[]');if(sl.length>nSch)nSch=sl.length;}catch(e){}
+ document.getElementById('k_sch').textContent=nSch||'–';
+ document.getElementById('k_stu').textContent=a.length.toLocaleString();
+ document.getElementById('k_cert').textContent=ws.length.toLocaleString();
+ var tag=document.getElementById('ov_tag');if(tag){tag.textContent='ข้อมูลจริง (เครื่องนี้)';tag.style.background='#2E7D32';}
+ var note=document.getElementById('ov_note');if(note)note.textContent='ตัวเลขจากข้อมูลที่กรอกในแดชบอร์ดเจ้าหน้าที่ของเครื่องนี้ ('+a.length+' คน) · ภาพรวมทั้งระบบข้ามเครื่องดูได้หลังล็อกอินระบบกลาง';
+})();
+</script>
 <script src="examinfo.js"></script>
 <script>if(window.renderExamInfo)renderExamInfo('examinfo');</script>
 </body></html>
