@@ -1,0 +1,71 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>แดชบอร์ดผู้ปกครอง · BrightStar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB;--green:#2E7D32}
+*{box-sizing:border-box}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
+.bar{background:#241B12;color:#FBF7EE;font-size:13px;padding:8px 16px;display:flex;gap:16px;align-items:center;border-bottom:2px solid #C9A961;flex-wrap:wrap}
+.bar a{color:#FBF7EE;text-decoration:none}.bar a.h{color:#C9A961;font-weight:700}
+.hero{background:linear-gradient(160deg,#5C3A22,#9C7B3F 130%);color:#fff;text-align:center;padding:28px 18px 22px;border-bottom:3px solid var(--gold)}
+.hero img{width:64px;background:#FFFDF7;border-radius:13px;padding:6px}
+.hero .k{letter-spacing:3px;font-size:11px;font-weight:700;color:#ffe9b0;margin-top:6px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:27px;margin:3px 0 0}
+.wrap{max-width:780px;margin:0 auto;padding:18px 16px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 4px 16px rgba(120,80,20,.07)}
+.who{text-align:center}.who .nm{font-size:23px;font-weight:700;color:var(--berry)}.who .meta{color:var(--grey);font-size:13.5px;margin-top:3px}
+.levelwrap{text-align:center;margin:8px 0}.starline{font-size:24px;letter-spacing:4px;color:var(--gold)}
+.levelbadge{display:inline-block;background:linear-gradient(135deg,var(--gold),#E4D4A8);color:#241B12;font-weight:700;border-radius:30px;padding:8px 22px;font-size:18px;margin-top:6px}
+.bigw{font-size:46px;font-weight:700;color:var(--berry);text-align:center;line-height:1}.bigw small{font-size:16px;color:var(--grey);font-weight:400}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+.dom{margin:11px 0}.dom .top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px}.dom .sc{font-weight:700;color:var(--berry)}
+.track{height:13px;background:var(--paper);border-radius:10px;overflow:hidden}.fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--gold),var(--berry))}
+.sec-h{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:20px;margin:0 0 8px;border-left:5px solid var(--gold);padding-left:10px}
+.note{background:var(--paper);border-radius:12px;padding:12px 15px;font-size:14px;margin-top:8px}.note.good{border-left:4px solid var(--green)}.note.work{border-left:4px solid var(--gold)}
+.btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:10px 20px;border-radius:24px;font-size:14px;border:0;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--berry);border:1.5px solid var(--berry)}
+.btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.gate{max-width:420px;margin:20px auto;text-align:center}.gate input{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font-size:14px;margin:8px 0;font-family:inherit}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}@media(max-width:560px){.rooms{grid-template-columns:1fr}}
+.rm{background:var(--paper);border-radius:10px;padding:9px 12px;font-size:13px}.rm b{color:var(--deep)}
+footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
+@media print{.bar,.btns{display:none}body{background:#fff}}
+</style></head><body>
+<div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="index.html">หน้าแรกพอร์ทัล</a></div>
+<div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แดชบอร์ดผลของบุตรหลาน</h1></div>
+<div class="wrap" id="app"></div>
+<footer>BrightStar Assessment Institute · ข้อมูลนี้เป็นความลับเฉพาะครอบครัว · เปิดจากลิงก์/รหัสเฉพาะของบุตรหลานท่าน</footer>
+<script>
+var W={th:20,en:20,ma:25,ef:20,mo:15};
+var NAMES={th:["🇹🇭","ภาษาไทย"],en:["🔤","ภาษาอังกฤษ"],ma:["🔢","คณิต-ตรรกะ"],ef:["🧠","EF / เชาวน์"],mo:["✋","กล้ามเนื้อ"]};
+var DESC={'I':'ดาวดวงน้อยกำลังเริ่มต้น — วัยทองของการเล่นและสำรวจ','II':'ดาวเริ่มฉายแสง — พัฒนาการกำลังก่อตัวอย่างน่ารัก','III':'ดาวสุกใส — พื้นฐานหลายด้านมั่นคงขึ้น','IV':'ดาวเด่น — ทำได้ดีหลายกลุ่ม เหมาะเสริมความท้าทายเบา ๆ','V':'ดาวนำทาง — สมรรถนะโดยรวมแข็งแรง','VI':'ดาวเจิดจรัส — โดดเด่นรอบด้าน','VII':'ดาวมาสเตอร์ — เปล่งประกายเต็มที่ทุกด้าน'};
+function rn(r){return {I:1,II:2,III:3,IV:4,V:5,VI:6,VII:7}[r]||0}
+function esc(s){return (''+(s==null?'':s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function decode(){try{var m=location.hash.match(/d=([^&]+)/);if(!m)return null;return JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(m[1])))));}catch(e){return null}}
+function radar(s){
+ var ks=['th','en','ma','ef','mo'],pts=[],lab=[],cx=115,cy=110,R=82;
+ for(var i=0;i<5;i++){var ang=-Math.PI/2+i*2*Math.PI/5;var v=(s&&s[ks[i]]!=null&&s[ks[i]]!=='')?Number(s[ks[i]]):0;var r=R*Math.max(0,Math.min(100,v))/100;
+  pts.push((cx+r*Math.cos(ang)).toFixed(1)+','+(cy+r*Math.sin(ang)).toFixed(1));
+  lab.push('<text x="'+(cx+(R+14)*Math.cos(ang)).toFixed(0)+'" y="'+(cy+(R+14)*Math.sin(ang)+4).toFixed(0)+'" font-size="11" text-anchor="middle" fill="#5C3A22" font-family="Sarabun">'+NAMES[ks[i]][1]+'</text>');}
+ var rings='';[0.33,0.66,1].forEach(function(f){var p=[];for(var i=0;i<5;i++){var a=-Math.PI/2+i*2*Math.PI/5;p.push((cx+R*f*Math.cos(a)).toFixed(1)+','+(cy+R*f*Math.sin(a)).toFixed(1));}rings+='<polygon points="'+p.join(' ')+'" fill="none" stroke="#EADFCB" stroke-width="1"/>';});
+ return '<svg width="230" height="215" viewBox="0 0 230 220">'+rings+'<polygon points="'+pts.join(' ')+'" fill="rgba(156,123,63,.28)" stroke="#9C7B3F" stroke-width="2.5"/>'+lab.join('')+'</svg>';
+}
+var ROOMS='<div class="rooms"><div class="rm"><b>🇹🇭 ภาษาไทย</b> ฟัง-พูด อ่าน-เขียน เล่าเรื่อง</div><div class="rm"><b>🔤 อังกฤษ</b> เทียบ CEFR Pre-A1/A1/A2</div><div class="rm"><b>🔢 คณิต-ตรรกะ</b> นับ รูปทรง แบบรูป เชาวน์</div><div class="rm"><b>🧠 EF/เชาวน์</b> ความจำ ยับยั้ง ยืดหยุ่นคิด</div><div class="rm"><b>✋ กล้ามเนื้อ</b> ทรงตัว ประสาน เขียน-ตัด-วาด</div></div>';
+function render(){
+ var app=document.getElementById('app'),d=decode();
+ if(!d){app.innerHTML='<div class="card gate"><div style="font-size:38px">🔗</div><h2 style="color:var(--berry);font-family:Cormorant Garamond,serif">ใส่รหัส/ลิงก์ผล</h2><p style="color:var(--grey);font-size:14px">วางลิงก์ผลหรือรหัสที่สถาบันส่งให้ทาง LINE/อีเมล</p><input id="g" placeholder="วางลิงก์ หรือ #d=..." onkeydown="if(event.key===\'Enter\')gogate()"><button class="btn" onclick="gogate()">ดูผล →</button><div class="btns" style="margin-top:14px"><a class="btn ghost" href="index.html">← กลับหน้าพอร์ทัล</a></div></div>';return;}
+ var stars='★'.repeat(rn(d.lv&&d.lv.r))+'☆'.repeat(7-rn(d.lv&&d.lv.r));
+ var doms='',entries=[];
+ for(var k in W){var v=d.s&&d.s[k];if(v!==''&&v!=null){entries.push([k,Number(v)]);doms+='<div class="dom"><div class="top"><b>'+NAMES[k][0]+' '+NAMES[k][1]+'</b><span class="sc">'+v+'/100</span></div><div class="track"><div class="fill" style="width:'+v+'%"></div></div></div>';}else{doms+='<div class="dom"><div class="top"><b>'+NAMES[k][0]+' '+NAMES[k][1]+'</b><span style="color:var(--grey)">ยังไม่ประเมิน</span></div><div class="track"></div></div>';}}
+ entries.sort(function(a,b){return b[1]-a[1]});var hi=entries[0],lo=entries[entries.length-1];var narr='';
+ if(hi)narr+='<div class="note good"><b>จุดเด่น:</b> '+NAMES[hi[0]][1]+' ('+hi[1]+' คะแนน) — ชื่นชมและสนับสนุนต่อเนื่อง</div>';
+ if(lo&&entries.length>1&&lo[0]!==hi[0])narr+='<div class="note work"><b>ด้านที่ควรส่งเสริม:</b> '+NAMES[lo[0]][1]+' ('+lo[1]+' คะแนน) — เพิ่มกิจกรรมเล่น-เรียนรู้ที่บ้านอย่างสนุก ไม่กดดัน</div>';
+ app.innerHTML='<div class="card who"><div class="nm">'+esc(d.n)+'</div><div class="meta">'+(d.sch?esc(d.sch)+' · ':'')+'ระดับชั้น '+esc(d.c)+(d.ar?' · '+esc(d.ar):'')+'</div><div class="meta">รหัส '+esc(d.id)+(d.dt?' · ประเมิน '+esc(d.dt):'')+'</div></div>'
+ +'<div class="card"><div class="levelwrap"><div class="starline">'+stars+'</div><div class="levelbadge">ระดับ '+esc(d.lv&&d.lv.r)+' · '+esc(d.lv&&d.lv.n)+'</div></div><div class="bigw">'+esc(d.w)+'<small> / 100 คะแนนรวม</small></div><p style="text-align:center;color:var(--grey);font-size:14px;margin:8px 4px 0">'+(DESC[d.lv&&d.lv.r]||'')+'</p></div>'
+ +'<div class="card"><div class="sec-h">คะแนนรายด้าน</div><div class="grid2"><div>'+doms+'</div><div style="text-align:center">'+radar(d.s)+'</div></div>'+narr+'</div>'
+ +'<div class="card" style="text-align:center"><div class="sec-h" style="text-align:left">เกียรติบัตร</div><p style="color:var(--grey);font-size:14px">บุตรหลานได้รับเกียรติบัตรระดับ <b>'+esc(d.lv&&d.lv.n)+'</b></p><div class="btns"><a class="btn" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Certificate_Premium.html" target="_blank" rel="noopener">🏆 ดูตัวอย่างเกียรติบัตร</a><button class="btn ghost" onclick="window.print()">🖨 พิมพ์</button></div></div>'
+ +'<div class="card"><div class="sec-h">ข้อมูลการจัดสอบ &amp; คำอธิบายข้อสอบ</div><p style="font-size:13.5px;color:var(--grey);margin:0 0 6px">รอบถัดไป: 23 ส.ค. 2569 · สนามกลางโคราช — วัดซ้ำเพื่อดูพัฒนาการได้</p>'+ROOMS+'<div class="btns" style="margin-top:12px"><a class="btn ghost" href="index.html">← กลับหน้าพอร์ทัล</a><a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Register.html" target="_blank" rel="noopener">จองรอบถัดไป</a></div></div>';
+}
+function gogate(){var v=document.getElementById('g').value.trim();if(!v)return;var c=v;var m=v.match(/[#?]d=([^&]+)/);if(m)c=m[1];location.hash='d='+c;render();}
+window.addEventListener('hashchange',render);render();
+</script>
+</body></html>

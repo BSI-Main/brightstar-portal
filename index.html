@@ -1,0 +1,90 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>พอร์ทัลผู้ปกครอง & โรงเรียน · BrightStar Assessment Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.hero{position:relative;background:radial-gradient(1000px 380px at 50% -120px,#fff6e0,transparent),linear-gradient(160deg,#5C3A22,#9C7B3F 60%,#B0883C);color:#fff;text-align:center;padding:48px 18px 40px;border-bottom:4px solid var(--gold)}
+.hero img{width:96px;background:#FFFDF7;border-radius:18px;padding:8px;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.hero .k{letter-spacing:4px;font-size:12px;font-weight:700;color:#ffe9b0;margin-top:8px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:40px;margin:6px 0 2px}
+.hero p{font-size:15px;color:#f3e7cd;margin:2px 0 0}
+.wrap{max-width:1000px;margin:0 auto;padding:26px 18px 80px}
+h2{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:26px;margin:34px 0 14px;border-left:5px solid var(--gold);padding-left:12px}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:-30px;position:relative;z-index:3}
+@media(max-width:680px){.roles{grid-template-columns:1fr}}
+.role{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(120,80,20,.10)}
+.role .ic{font-size:38px}.role h3{font-family:"Cormorant Garamond",serif;color:var(--deep);font-size:24px;margin:6px 0 2px}
+.role .d{font-size:13.5px;color:var(--grey);min-height:38px}
+.btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:26px;font-size:15px;border:0;cursor:pointer;font-family:inherit;text-align:center}
+.btn:hover{background:var(--deep)}.btn.gold{background:var(--gold);color:#241B12}.btn.ghost{background:transparent;color:var(--berry);border:1.5px solid var(--berry)}
+.role .btn{width:100%;margin-top:10px}
+.qf{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+.qf label{font-size:12.5px;font-weight:600;color:var(--grey);display:block;margin-bottom:5px}
+.qf input{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;font-family:inherit;font-size:13.5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;border-top:4px solid var(--c,#9C7B3F)}
+.card .ic{font-size:26px}.card .nm{font-weight:700;color:var(--c,#9C7B3F);font-size:16px;margin-top:4px}
+.card .ds{font-size:12.5px;color:var(--ink);margin-top:4px}
+.round{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:14px;margin-bottom:8px}.round b{color:var(--deep)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.note{background:var(--paper);border-left:4px solid var(--gold);border-radius:8px;padding:11px 14px;font-size:13px;color:var(--grey);margin-top:12px}
+footer{text-align:center;color:var(--grey);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+</style></head><body>
+<div class="hero">
+  <img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div>
+  <h1>พอร์ทัลผู้ปกครอง &amp; โรงเรียน</h1>
+  <p>เข้าดูผลประเมิน Star Path · เกียรติบัตร · ข้อมูลการจัดสอบ · คำอธิบายข้อสอบ</p>
+</div>
+<div class="wrap">
+  <div class="roles">
+    <div class="role">
+      <div class="ic">👨‍👩‍👧</div><h3>ผู้ปกครอง</h3>
+      <div class="d">ดูคะแนน 5 สมรรถนะ ระดับดาว เกียรติบัตร และพัฒนาการของบุตรหลาน</div>
+      <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">🔐 เข้าสู่ระบบ (สำหรับข้อมูลสด)</a>
+      <div class="qf"><label>หรือดูผลด่วน — วางรหัส/ลิงก์ผลที่สถาบันส่งให้</label>
+        <input id="pcode" placeholder="วางลิงก์ผล หรือรหัส #d=..." onkeydown="if(event.key==='Enter')goParent()">
+        <button class="btn gold" style="width:100%;margin-top:8px" onclick="goParent()">ดูผลของบุตรหลาน →</button>
+      </div>
+    </div>
+    <div class="role">
+      <div class="ic">🏫</div><h3>โรงเรียน</h3>
+      <div class="d">ดูภาพรวมผลของนักเรียนทั้งโรงเรียน เปรียบเทียบรายชั้น และดาวน์โหลดรายงาน</div>
+      <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">🔐 เข้าสู่ระบบ (สำหรับข้อมูลสด)</a>
+      <a class="btn ghost" href="school.html" style="width:100%;margin-top:8px">ดูตัวอย่างแดชบอร์ดโรงเรียน</a>
+    </div>
+  </div>
+  <div class="note">🔒 <b>ความเป็นส่วนตัว:</b> การเข้าดูข้อมูลสดของบุตรหลาน/โรงเรียน ต้องล็อกอินผ่านระบบกลาง (AppSheet) ซึ่งแสดงเฉพาะข้อมูลในสิทธิ์ของท่าน · ส่วน "ดูผลด่วน" ใช้รหัสเฉพาะที่สถาบันออกให้สำหรับบุตรหลานของท่านเท่านั้น</div>
+
+  <h2>ข้อมูลการจัดสอบ</h2>
+  <div class="round"><b>รอบที่ 1</b> · 26 ก.ค. 2569 · สนามกลางโคราช · เปิดรับสมัครแล้ว</div>
+  <div class="round"><b>รอบที่ 2</b> · 23 ส.ค. 2569 · สนามกลางโคราช</div>
+  <div class="round"><b>รอบที่ 3</b> · 27 ก.ย. 2569 · สนามกลางโคราช</div>
+  <div class="note">สิ่งที่ต้องเตรียม: มาก่อนเวลาสอบ 20 นาที · นำใบนัด/บัตรประจำตัว · ให้เด็กพักผ่อนเพียงพอ ทานอาหารเช้า · การประเมินอยู่ในรูปกิจกรรมเล่น-เรียนรู้ ไม่กดดันเด็ก</div>
+  <div class="links">
+    <a class="btn" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Register.html" target="_blank" rel="noopener">📝 สมัคร / จองรอบสอบ</a>
+    <a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Verify.html" target="_blank" rel="noopener">🔎 ตรวจสอบเกียรติบัตร</a>
+  </div>
+
+  <h2>คำอธิบายข้อสอบ 5 ห้อง</h2>
+  <div class="cards">
+    <div class="card" style="--c:#9C7B3F"><div class="ic">🇹🇭</div><div class="nm">ห้อง 1 · ภาษาไทย</div><div class="ds">ฟัง-พูด สื่อสาร · อ่าน-เขียนเบื้องต้น · เล่าเรื่อง/คำศัพท์ตามวัย</div></div>
+    <div class="card" style="--c:#E07A2F"><div class="ic">🔤</div><div class="nm">ห้อง 2 · ภาษาอังกฤษ</div><div class="ds">เทียบมาตรฐาน CEFR (Pre-A1/A1/A2) · ฟัง คำศัพท์ ประโยคง่าย</div></div>
+    <div class="card" style="--c:#1A7F5A"><div class="ic">🔢</div><div class="nm">ห้อง 3 · คณิต-ตรรกะ</div><div class="ds">จำนวน-นับ · รูปทรง · แบบรูป · เชาวน์เชิงตรรกะแนวสาธิต</div></div>
+    <div class="card" style="--c:#3457B2"><div class="ic">🧠</div><div class="nm">ห้อง 4 · EF / เชาวน์</div><div class="ds">ความจำใช้งาน · ยับยั้งชั่งใจ · ยืดหยุ่นความคิด · เมทริกซ์</div></div>
+    <div class="card" style="--c:#8A4FB3"><div class="ic">✋</div><div class="nm">ห้อง 5 · กล้ามเนื้อ</div><div class="ds">มัดใหญ่ (ทรงตัว ประสานงาน) · มัดเล็ก (เขียน-ตัด-วาด)</div></div>
+  </div>
+  <div class="note">วัด 5 สมรรถนะ คิดคะแนนถ่วงน้ำหนัก (ไทย20 · อังกฤษ20 · คณิต25 · EF20 · กล้ามเนื้อ15) แล้วจัดระดับ <b>Star Path 7 ดาว</b> · ดูตัวอย่าง <a href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Parent_Report.html" target="_blank" rel="noopener">รายงานผล</a> และ <a href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_Certificate_Premium.html" target="_blank" rel="noopener">เกียรติบัตร</a></div>
+
+  <footer>BrightStar Assessment Institute · พอร์ทัลผู้ปกครอง &amp; โรงเรียน · รับรองวิชาการโดยมหาวิทยาลัยวงษ์ชวลิตกุล</footer>
+</div>
+<script>
+function goParent(){
+ var v=document.getElementById('pcode').value.trim();
+ if(!v){alert('วางรหัส/ลิงก์ผลที่สถาบันส่งให้ก่อนค่ะ');return;}
+ var code=v;
+ var m=v.match(/[#?]d=([^&]+)/); if(m) code=m[1];           // ถ้าวางทั้งลิงก์ ดึง token ออกมา
+ location.href='parent.html#d='+code;
+}
+</script>
+</body></html>
