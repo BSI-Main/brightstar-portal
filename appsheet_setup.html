@@ -1,0 +1,89 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>คู่มือเปิดระบบล็อกอินจริง (AppSheet) · BrightStar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB;--green:#2E7D32;--red:#B3261E}
+*{box-sizing:border-box}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.bar{background:#241B12;color:#FBF7EE;font-size:13px;padding:8px 16px;display:flex;gap:16px;align-items:center;border-bottom:2px solid #C9A961;flex-wrap:wrap}
+.bar a{color:#FBF7EE;text-decoration:none}.bar a.h{color:#C9A961;font-weight:700}
+.hero{background:linear-gradient(160deg,#5C3A22,#9C7B3F 130%);color:#fff;text-align:center;padding:26px 18px 20px;border-bottom:3px solid var(--gold)}
+.hero img{width:60px;background:#FFFDF7;border-radius:12px;padding:6px}
+.hero .k{letter-spacing:3px;font-size:11px;font-weight:700;color:#ffe9b0;margin-top:6px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:25px;margin:3px 0 0}
+.wrap{max-width:840px;margin:0 auto;padding:18px 16px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 4px 16px rgba(120,80,20,.06)}
+.sec-h{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:20px;margin:0 0 8px;border-left:5px solid var(--gold);padding-left:10px}
+.step{display:flex;gap:14px;margin:14px 0;padding:14px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.step .no{flex:0 0 38px;height:38px;border-radius:50%;background:var(--berry);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:18px}
+.step .bd{flex:1}.step .t{font-weight:700;color:var(--deep);font-size:16px}
+.step .d{font-size:14px;color:var(--ink);margin-top:3px}
+.path{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:1px 8px;font-size:13px;color:var(--deep);font-weight:600;margin:2px 0}
+.note{background:var(--paper);border-left:4px solid var(--gold);border-radius:9px;padding:11px 14px;font-size:13px;color:var(--grey);margin-top:10px}
+.warn{background:#FBEEEC;border-left:4px solid var(--red);border-radius:9px;padding:11px 14px;font-size:13px;color:#7a241c;margin-top:10px}
+.good{background:#EAF5EC;border-left:4px solid var(--green);border-radius:9px;padding:11px 14px;font-size:13px;color:#1e4d27;margin-top:10px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--deep);color:#FBF7EE;font-weight:600}
+tr:nth-child(even) td{background:#FCFAF4}.code{font-family:ui-monospace,Consolas,monospace;font-size:12.5px;background:#2b2017;color:#ffe9b0;border-radius:7px;padding:8px 11px;display:block;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:11px 22px;border-radius:24px;font-size:14.5px}
+.btn.ghost{background:transparent;color:var(--berry);border:1.5px solid var(--berry)}.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
+</style></head><body>
+<div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="admin.html">← กลับหน้าผู้ดูแลระบบ</a></div>
+<div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>คู่มือเปิดระบบล็อกอินจริง (AppSheet)</h1></div>
+<div class="wrap">
+
+  <div class="card">
+    <div class="sec-h">ทำไมต้องตั้งค่านี้</div>
+    <p style="font-size:14px;margin:4px 0">พอร์ทัล (เว็บนิ่ง) ใช้ "รหัสอำนวยความสะดวก" เพื่อแยกหน้าตามบทบาทเท่านั้น — <b>ข้อมูลส่วนตัวจริง</b> (คะแนนรายคน/ทั้งโรงเรียน) อยู่ในระบบกลาง AppSheet ซึ่งจะแสดง "เฉพาะข้อมูลในสิทธิ์ของผู้ใช้" ได้ก็ต่อเมื่อ <b>เปิด Require Sign-In</b> และผูกผู้ใช้กับบทบาทเรียบร้อย</p>
+    <div class="good">เป้าหมาย: ผู้ปกครองเห็นเฉพาะลูกตัวเอง · โรงเรียนเห็นเฉพาะโรงเรียนตัวเอง · เจ้าหน้าที่/ผู้บริหารเห็นตามสิทธิ์ — ทั้งหมดทำงานด้วย <b>Security Filter ตามอีเมล (USEREMAIL())</b> ที่ตั้งไว้แล้ว</div>
+  </div>
+
+  <div class="card">
+    <div class="sec-h">ขั้นตอนตั้งค่า (ทำครั้งเดียว)</div>
+
+    <div class="step"><div class="no">1</div><div class="bd"><div class="t">เปิด Require Sign-In</div>
+      <div class="d">ในตัวแก้ไขแอป (AppSheet editor) ไปที่ <span class="path">Settings ⚙ → Security → Require Sign-In</span> แล้วสลับเป็น <b>ON</b> · เลือกผู้ให้บริการล็อกอิน <b>Google</b> (และ/หรืออีเมลอื่นตามต้องการ)</div></div></div>
+
+    <div class="step"><div class="no">2</div><div class="bd"><div class="t">เพิ่มผู้ใช้ที่อนุญาต</div>
+      <div class="d">ไปที่ <span class="path">Users → Manage Users (Add users)</span> ใส่อีเมลผู้ใช้จริง: เจ้าหน้าที่ · ผู้บริหาร · ผู้ดูแลโรงเรียน · ผู้ปกครอง — ระบบจะส่งคำเชิญให้ล็อกอิน</div></div></div>
+
+    <div class="step"><div class="no">3</div><div class="bd"><div class="t">ผูกอีเมลกับบทบาทในตาราง Roles</div>
+      <div class="d">เปิดตาราง <span class="path">Roles</span> เพิ่มแถว: <b>อีเมลผู้ใช้</b> + <b>บทบาท</b> ให้ตรงกับที่ Security Filter ใช้ตรวจ เช่น ผู้บริหาร (Executive) / เจ้าหน้าที่ (Staff) / โรงเรียน / ผู้ปกครอง · สำหรับผู้ปกครอง ให้อีเมลตรงกับช่อง "อีเมลผู้ปกครอง" ในตาราง Students</div></div></div>
+
+    <div class="step"><div class="no">4</div><div class="bd"><div class="t">ตรวจ Security Filter ของตารางข้อมูล</div>
+      <div class="d">ที่ <span class="path">Data → (ตาราง Scores/Students) → Security Filter</span> ตรวจให้ใช้สูตรอิงอีเมลผู้ใช้ (ตัวอย่างด้านล่าง) เพื่อให้แต่ละคนเห็นเฉพาะแถวของตน</div>
+      <span class="code">OR(
+  [Students].[อีเมลผู้ปกครอง] = USEREMAIL(),
+  IN(USEREMAIL(), SELECT(Roles[อีเมลผู้ใช้],
+     OR([บทบาท]="ผู้บริหาร (Executive)", [บทบาท]="เจ้าหน้าที่/ครู (Staff)")))
+)</span></div></div>
+
+    <div class="step"><div class="no">5</div><div class="bd"><div class="t">บันทึก แล้วทดสอบ</div>
+      <div class="d">กด <span class="path">Save</span> → <span class="path">Sync</span> · ทดสอบด้วยปุ่ม <span class="path">Preview as (ดูในมุมผู้ใช้)</span> โดยใส่อีเมลผู้ปกครอง 1 ราย แล้วยืนยันว่าเห็นเฉพาะข้อมูลของลูกตน · จากนั้นลองล็อกอินจริงด้วยบัญชีผู้ใช้ 1 บัญชี</div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-h">ใครเห็นอะไร (สรุปสิทธิ์)</div>
+    <table>
+      <tr><th>บทบาท</th><th>เห็นข้อมูล</th><th>ทำอะไรได้</th></tr>
+      <tr><td>ผู้ปกครอง / นักเรียน</td><td>เฉพาะบุตรหลานของตน</td><td>ดูคะแนน · เกียรติบัตร</td></tr>
+      <tr><td>โรงเรียน</td><td>เฉพาะนักเรียนในโรงเรียนตน</td><td>ดูภาพรวม · ดาวน์โหลดรายงาน</td></tr>
+      <tr><td>เจ้าหน้าที่ / ครู</td><td>ทุกคนที่รับผิดชอบ</td><td>ลงทะเบียน · กรอกผล · ออกลิงก์</td></tr>
+      <tr><td>ผู้ดูแลระบบ / ผู้บริหาร</td><td>ทั้งระบบ</td><td>จัดการผู้ใช้/บทบาท · ดูเชิงลึก</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="sec-h">ข้อควรระวัง</div>
+    <div class="warn">อย่าตั้งแอปเป็น <b>Public (ไม่ต้องล็อกอิน)</b> เพราะจะทำให้ Security Filter ตามอีเมลไม่ทำงาน และข้อมูลเด็กอาจหลุดถึงคนนอก · ให้ <b>Require Sign-In = ON เสมอ</b></div>
+    <div class="note">การเปิด Require Sign-In และการเพิ่ม/แชร์ผู้ใช้ เป็นการตั้งค่าความปลอดภัย ผู้ดูแลระบบควรเป็นผู้กดยืนยันเอง (ระบบอัตโนมัติจะไม่กดสลับให้)</div>
+    <div class="btns">
+      <a class="btn" href="https://www.appsheet.com/start/055c592c-257a-49ff-9d2f-108e6d416ebf" target="_blank" rel="noopener">เปิดระบบกลาง (AppSheet) →</a>
+      <a class="btn ghost" href="https://thanwaphisit-tao.github.io/brightstar-assessment/BSI_DataFlow_Guide.html" target="_blank" rel="noopener">ดูคู่มือการไหลข้อมูล</a>
+      <a class="btn ghost" href="admin.html">← กลับหน้าผู้ดูแลระบบ</a>
+    </div>
+  </div>
+
+  <footer>BrightStar Assessment Institute · คู่มือเปิดระบบล็อกอินจริง (AppSheet) · สำหรับผู้ดูแลระบบ</footer>
+</div>
+</body></html>
