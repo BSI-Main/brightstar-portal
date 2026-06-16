@@ -34,7 +34,7 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 </style></head><body>
 <div id="gate"><div><img src="logo.png" alt="logo"><h2>ต้องเข้าสู่ระบบก่อน</h2><p>กรุณาเข้าสู่ระบบในฐานะ "โรงเรียน" เพื่อเข้าหน้านี้</p><a href="index.html">ไปหน้าเข้าสู่ระบบ →</a></div></div>
 <div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="index.html">เข้าสู่ระบบ</a><span class="sp"></span><a onclick="bsiLogout()">ออกจากระบบ ⎋</a></div>
-<div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แดชบอร์ดโรงเรียน</h1></div>
+<div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แดชบอร์ดโรงเรียน</h1><div id="schName" style="margin-top:5px;font-size:15px;color:#ffe9b0;font-weight:600"></div></div>
 <div class="wrap">
   <div class="card login">
     <div style="font-size:34px">🏫🔐</div>
@@ -88,7 +88,7 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
   <footer>BrightStar Assessment Institute · แดชบอร์ดโรงเรียน · ข้อมูลแสดงเฉพาะสิทธิ์ของโรงเรียนหลังล็อกอิน</footer>
 </div>
 <script>function bsiLogout(){try{sessionStorage.removeItem('bsi_role');}catch(e){}location.href='index.html';}
-(function(){var r=null;try{r=sessionStorage.getItem('bsi_role')}catch(e){}; if(['school','admin'].indexOf(r)<0){document.getElementById('gate').style.display='flex';document.body.style.overflow='hidden';}})();</script>
+(function(){var r=null,sc=null;try{r=sessionStorage.getItem('bsi_role');sc=sessionStorage.getItem('bsi_school');}catch(e){}; if(['school','admin'].indexOf(r)<0){document.getElementById('gate').style.display='flex';document.body.style.overflow='hidden';return;} if(sc){var el=document.getElementById('schName'); if(el) el.textContent='โรงเรียน: '+sc;}})();</script>
 <script src="examinfo.js"></script>
 <script>if(window.renderExamInfo)renderExamInfo('examinfo');</script>
 </body></html>

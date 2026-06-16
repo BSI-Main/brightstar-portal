@@ -88,9 +88,17 @@ input:focus{outline:none;border-color:var(--berry)}
   <div class="foot">BrightStar Assessment Institute · รับรองวิชาการโดยมหาวิทยาลัยวงษ์ชวลิตกุล</div>
 </div>
 <script>
-/* รหัสเข้าระบบ (สถาบันแก้ไขได้ที่นี่) — เป็นรหัสอำนวยความสะดวก ไม่ใช่ระบบรักษาความปลอดภัยจริง
-   ข้อมูลส่วนตัวจริงอยู่หลังการล็อกอินระบบกลาง (AppSheet) เท่านั้น */
-var ACCESS={school:'school2569', staff:'staff2569', admin:'admin2569'};
+/* ===== รหัสเข้าระบบ (สถาบันแก้ไขได้ที่นี่) =====
+   • เจ้าหน้าที่ / ผู้ดูแลระบบ : รหัสเดียวต่อบทบาท (แก้ได้ที่ ACCESS)
+   • โรงเรียน : แยกรหัสรายโรงเรียน — เพิ่ม/แก้ได้ใน SCHOOLS  ('รหัส':'ชื่อโรงเรียน')
+     *** เปลี่ยนชื่อโรงเรียนตัวอย่างเป็นโรงเรียนจริง และเพิ่มได้ไม่จำกัด ***
+   หมายเหตุ: รหัสฝั่งเบราว์เซอร์เป็นรหัสอำนวยความสะดวก ไม่ใช่ security จริง — ข้อมูลส่วนตัวจริงอยู่หลัง AppSheet */
+var ACCESS={ staff:'BSI-Staff-QXAV3', admin:'BSI-Admin-RW29U' };
+var SCHOOLS={
+  'BSI-SCH-H6FEK':'โรงเรียนตัวอย่าง ก',
+  'BSI-SCH-6G92D':'โรงเรียนตัวอย่าง ข',
+  'BSI-SCH-UQ6N5':'โรงเรียนตัวอย่าง ค'
+};
 var cur=null;
 function pick(r){
  cur=r;
@@ -103,7 +111,7 @@ function pick(r){
  var f={parent:'parentCode',school:'schoolCode',staff:'staffCode',admin:'adminCode'}[r];
  setTimeout(function(){var i=document.getElementById(f);if(i)i.focus();},60);
 }
-function setRole(r){try{sessionStorage.setItem('bsi_role',r);}catch(e){}}
+function setRole(r,school){try{sessionStorage.setItem('bsi_role',r); if(school){sessionStorage.setItem('bsi_school',school);}else{sessionStorage.removeItem('bsi_school');}}catch(e){}}
 function go(r){
  if(r==='parent'){
   setRole('parent');
@@ -113,6 +121,11 @@ function go(r){
   return;
  }
  var code=(document.getElementById(r+'Code').value||'').trim();
+ if(r==='school'){
+  if(SCHOOLS[code]){setRole('school',SCHOOLS[code]);location.href='school.html';}
+  else{document.getElementById('e-school').style.display='block';}
+  return;
+ }
  if(code===ACCESS[r]){setRole(r);location.href=r+'.html';}
  else{document.getElementById('e-'+r).style.display='block';}
 }
