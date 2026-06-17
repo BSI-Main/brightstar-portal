@@ -1,0 +1,92 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ศูนย์ทดลองระบบ (Demo) · BrightStar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB;--green:#2E7D32}
+*{box-sizing:border-box}body{margin:0;font-family:"Sarabun",sans-serif;color:var(--ink);background:linear-gradient(160deg,#5C3A22,#9C7B3F 80%,#B0883C);min-height:100vh;line-height:1.55}
+.shell{max-width:760px;margin:0 auto;padding:34px 16px 60px}
+.top{text-align:center;color:#fff}.top img{width:74px;background:#FFFDF7;border-radius:16px;padding:7px;box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.top .k{letter-spacing:4px;font-size:11px;font-weight:700;color:#ffe9b0;margin-top:8px}
+.top h1{font-family:"Cormorant Garamond",serif;font-size:32px;margin:4px 0 2px}
+.top p{font-size:14px;color:#f3e7cd;margin:0}
+.demoTag{display:inline-block;background:#fff;color:var(--deep);font-weight:700;font-size:12px;border-radius:20px;padding:3px 14px;margin-top:8px}
+.card{background:var(--cream);border-radius:18px;padding:22px;margin-top:20px;box-shadow:0 14px 36px rgba(0,0,0,.22)}
+.card h2{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:21px;margin:0 0 4px}
+.lead{color:var(--grey);font-size:13.5px;margin:0 0 16px}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:600px){.roles{grid-template-columns:1fr}}
+.role{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:14px;padding:16px;text-align:center}
+.role .ic{font-size:34px}.role .t{font-weight:700;color:var(--deep);font-size:16px;margin-top:4px}.role .s{font-size:12px;color:var(--grey);min-height:32px}
+.btn{display:block;width:100%;background:var(--berry);color:#fff;font-weight:700;padding:11px;border-radius:24px;font-size:14px;border:0;cursor:pointer;font-family:inherit;margin-top:8px;text-decoration:none}
+.btn:hover{background:var(--deep)}.btn.gold{background:var(--gold);color:#241B12}.btn.ghost{background:transparent;color:var(--berry);border:1.5px solid var(--berry)}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.quick a{flex:1;min-width:130px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px;font-size:13px;color:var(--berry);text-decoration:none;font-weight:600}
+.quick a:hover{border-color:var(--gold)}
+.note{background:#FFF7E6;border:1px solid var(--gold);border-radius:10px;padding:11px 14px;font-size:12.5px;color:var(--deep);margin-top:14px}
+.foot{text-align:center;color:#f3e7cd;font-size:11.5px;margin-top:20px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#241B12;color:#fff;padding:10px 18px;border-radius:24px;font-size:13.5px;opacity:0;transition:.25s;z-index:9999;pointer-events:none}.toast.on{opacity:1}
+</style></head><body>
+<div class="shell">
+  <div class="top"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div>
+    <h1>ศูนย์ทดลองระบบ</h1><p>กดปุ่มเดียวเข้าทดสอบได้ทันที — ไม่ต้องใช้รหัส มีข้อมูลตัวอย่างให้</p>
+    <div class="demoTag">🧪 DEMO · สำหรับทดสอบระบบ</div>
+  </div>
+
+  <div class="card">
+    <h2>เข้าทดลองตามบทบาท</h2>
+    <p class="lead">กดปุ่มจะ “ล็อกอินอัตโนมัติ + ใส่ข้อมูลตัวอย่าง” แล้วพาเข้าหน้าของบทบาทนั้นทันที</p>
+    <div class="roles">
+      <div class="role"><div class="ic">👨‍👩‍👧</div><div class="t">ผู้ปกครอง / นักเรียน</div><div class="s">ดูผล 5 ด้าน · ระดับดาว · IDP · พาสปอร์ต · เกียรติบัตร</div><button class="btn" onclick="go('parent')">เข้าทดลอง →</button></div>
+      <div class="role"><div class="ic">🏫</div><div class="t">โรงเรียน</div><div class="s">ภาพรวมทั้งโรงเรียน (ตัวเลขจากข้อมูลตัวอย่าง)</div><button class="btn" onclick="go('school')">เข้าทดลอง →</button></div>
+      <div class="role"><div class="ic">🧑‍🏫</div><div class="t">เจ้าหน้าที่ / ครู</div><div class="s">กรอกข้อมูล/คะแนน · มีนักเรียนตัวอย่าง 3 คน</div><button class="btn" onclick="go('staff')">เข้าทดลอง →</button></div>
+      <div class="role"><div class="ic">🛡️</div><div class="t">ผู้ดูแลระบบ</div><div class="s">ภาพรวมทั้งระบบ · จัดการโรงเรียน · คอนโซล</div><button class="btn" onclick="go('admin')">เข้าทดลอง →</button></div>
+    </div>
+    <div class="note">💡 ปุ่มด้านบนจะใส่ข้อมูลตัวอย่าง (นักเรียน 3 คน + โรงเรียน 3 แห่ง) ลงในเบราว์เซอร์นี้ เพื่อให้แดชบอร์ดมีตัวเลขให้ดู · ข้อมูลนี้เก็บเฉพาะเครื่องนี้และลบได้</div>
+  </div>
+
+  <div class="card">
+    <h2>ลิงก์ทดสอบด่วน (พร้อมข้อมูลตัวอย่าง)</h2>
+    <p class="lead">เปิดหน้าผลของ “เด็กหญิง ใจดี รักเรียน” (ระดับ V · ดาวนำทาง) ได้ทันที</p>
+    <div class="quick">
+      <a href="#" onclick="openDemo('parent.html');return false">แดชบอร์ดผู้ปกครอง</a>
+      <a href="#" onclick="openDemo('idp.html');return false">แผนพัฒนา IDP</a>
+      <a href="#" onclick="openDemo('passport.html');return false">สมุดพาสปอร์ต</a>
+      <a href="https://bsi-main.github.io/brightstar-assessment/BSI_Certificate_Premium.html" target="_blank" rel="noopener">เกียรติบัตร</a>
+      <a href="https://bsi-main.github.io/brightstar-assessment/BSI_Verify.html" target="_blank" rel="noopener">ตรวจเกียรติบัตร</a>
+      <a href="index.html">หน้าเข้าสู่ระบบจริง</a>
+    </div>
+    <div class="quick" style="margin-top:10px">
+      <button class="btn ghost" onclick="seedAll();toast('ใส่ข้อมูลตัวอย่างแล้ว ✓')">↻ ใส่ข้อมูลตัวอย่างใหม่</button>
+      <button class="btn ghost" onclick="wipe()">🗑 ล้างข้อมูลทดสอบ</button>
+    </div>
+  </div>
+
+  <div class="foot">BrightStar Assessment Institute · หน้านี้สำหรับทดสอบระบบเท่านั้น · ข้อมูลตัวอย่างไม่ใช่ข้อมูลจริง</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+/* โทเคนผลตัวอย่าง: เด็กหญิง ใจดี รักเรียน · 82/64/90/75/88 · ระดับ V ดาวนำทาง */
+var DEMO_TOKEN="eyJuIjoi4LmA4LiU4LmH4LiB4Lir4LiN4Li04LiHIOC5g+C4iOC4lOC4tSDguKPguLHguIHguYDguKPguLXguKLguJkiLCJjIjoi4Lit4LiZ4Li44Lia4Liy4LilIDIiLCJpZCI6IkJTSS0yNTY5LUFCMTJDIiwic2NoIjoi4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Liq4Liy4LiY4Li04LiV4LmC4LiE4Lij4Liy4LiKIiwiYXIiOiLguK0u4LmA4Lih4Li34Lit4LiHIOC4iC7guJnguITguKPguKPguLLguIrguKrguLXguKHguLIiLCJkdCI6IjI2IOC4gS7guIQuIDI1NjkiLCJzIjp7InRoIjo4MiwiZW4iOjY0LCJtYSI6OTAsImVmIjo3NSwibW8iOjg4fSwidyI6ODEsImx2Ijp7InIiOiJWIiwibiI6IuC4lOC4suC4p+C4meC4s+C4l+C4suC4hyJ9fQ==";
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1700);}
+function seedAll(){
+ var students=[
+  {id:'BSI-2569-AB12C',name:'เด็กหญิง ใจดี รักเรียน',sch:'โรงเรียนสาธิตโคราช',cls:'อนุบาล 2',tam:'ในเมือง',amp:'เมือง',pro:'นครราชสีมา',par:'คุณแม่ใจดี',con:'',dt:'26 ก.ค. 2569',scores:{th:82,en:64,ma:90,ef:75,mo:88}},
+  {id:'BSI-2569-KK77D',name:'เด็กชาย เก่งกล้า มานะ',sch:'โรงเรียนสาธิตโคราช',cls:'อนุบาล 3',tam:'ในเมือง',amp:'เมือง',pro:'นครราชสีมา',par:'คุณพ่อมานะ',con:'',dt:'26 ก.ค. 2569',scores:{th:70,en:55,ma:68,ef:60,mo:74}},
+  {id:'BSI-2569-MN33E',name:'เด็กหญิง แก้วตา ส่องแสง',sch:'โรงเรียนอนุบาลดวงดาว',cls:'อนุบาล 1',tam:'หัวทะเล',amp:'เมือง',pro:'นครราชสีมา',par:'คุณแม่แสง',con:'',dt:'26 ก.ค. 2569',scores:{th:48,en:40,ma:52,ef:45,mo:60}}
+ ];
+ var schools=[{name:'โรงเรียนสาธิตโคราช',code:'BSI-SCH-H6FEK',pro:'นครราชสีมา'},
+              {name:'โรงเรียนอนุบาลดวงดาว',code:'BSI-SCH-6G92D',pro:'นครราชสีมา'},
+              {name:'โรงเรียนเทศบาล 1',code:'BSI-SCH-UQ6N5',pro:'นครราชสีมา'}];
+ try{localStorage.setItem('bsi_console_v1',JSON.stringify(students));localStorage.setItem('bsi_schools',JSON.stringify(schools));}catch(e){}
+}
+function setRole(r,school){try{sessionStorage.setItem('bsi_role',r);if(school)sessionStorage.setItem('bsi_school',school);else sessionStorage.removeItem('bsi_school');}catch(e){}}
+function go(r){
+ seedAll();
+ if(r==='parent'){setRole('parent');location.href='parent.html#d='+DEMO_TOKEN;return;}
+ if(r==='school'){setRole('school','โรงเรียนสาธิตโคราช');location.href='school.html';return;}
+ if(r==='staff'){setRole('staff');location.href='console.html';return;}
+ if(r==='admin'){setRole('admin');location.href='admin.html';return;}
+}
+function openDemo(page){seedAll();setRole('parent');location.href=page+'#d='+DEMO_TOKEN;}
+function wipe(){try{localStorage.removeItem('bsi_console_v1');localStorage.removeItem('bsi_schools');sessionStorage.removeItem('bsi_role');sessionStorage.removeItem('bsi_school');var ks=[];for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k.indexOf('bsi_passport_')===0)ks.push(k);}ks.forEach(function(k){localStorage.removeItem(k);});}catch(e){}toast('ล้างข้อมูลทดสอบแล้ว ✓');}
+</script>
+</body></html>
