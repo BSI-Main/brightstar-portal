@@ -1,5 +1,5 @@
 <!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>แผนพัฒนารายบุคคล (IDP) 30/60/90 วัน · BrightStar</title>
+<title>แผนพัฒนารายบุคคล (IDP) · 5 ด้าน × 7 ระดับ · BrightStar</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--berry:#9C7B3F;--gold:#C9A961;--deep:#5C3A22;--ink:#241B12;--paper:#F6F1E6;--cream:#FBF7EE;--grey:#6E6353;--line:#EADFCB;--green:#2E7D32}
@@ -7,96 +7,136 @@
 .bar{background:#241B12;color:#FBF7EE;font-size:13px;padding:8px 16px;display:flex;gap:16px;align-items:center;border-bottom:2px solid #C9A961;flex-wrap:wrap}
 .bar a{color:#FBF7EE;text-decoration:none;cursor:pointer}.bar a.h{color:#C9A961;font-weight:700}.bar .sp{margin-left:auto}
 .hero{background:linear-gradient(160deg,#5C3A22,#9C7B3F 130%);color:#fff;text-align:center;padding:24px 18px 18px;border-bottom:3px solid var(--gold)}
-.hero img{width:56px;background:#FFFDF7;border-radius:12px;padding:6px}
+.hero img{width:54px;background:#FFFDF7;border-radius:12px;padding:6px}
 .hero .k{letter-spacing:3px;font-size:11px;font-weight:700;color:#ffe9b0;margin-top:5px}
 .hero h1{font-family:"Cormorant Garamond",serif;font-size:25px;margin:3px 0 0}
-.wrap{max-width:820px;margin:0 auto;padding:18px 16px 80px}
+.hero .sm{font-size:12.5px;color:#f3e7cd;margin-top:3px}
+.wrap{max-width:880px;margin:0 auto;padding:18px 16px 80px}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:13px 0;box-shadow:0 4px 16px rgba(120,80,20,.07)}
-.who{text-align:center}.who .nm{font-size:22px;font-weight:700;color:var(--berry)}.who .meta{color:var(--grey);font-size:13.5px;margin-top:3px}
-.sec-h{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:20px;margin:0 0 8px;border-left:5px solid var(--gold);padding-left:10px}
-.dom{margin:8px 0}.dom .top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:3px}.dom .sc{font-weight:700;color:var(--berry)}
-.track{height:12px;background:var(--paper);border-radius:9px;overflow:hidden}.fill{height:100%;border-radius:9px;background:linear-gradient(90deg,var(--gold),var(--berry))}
-.focus{background:#FBEEE0;border-left:4px solid #E07A2F}
-.good{background:var(--paper);border-left:4px solid var(--green)}
-.tag{display:inline-block;border-radius:12px;padding:2px 9px;font-size:11.5px;font-weight:700;background:var(--gold);color:#241B12;margin-left:6px}
-.phase{border:1px solid var(--line);border-radius:13px;margin:12px 0;overflow:hidden}
-.phase .ph{background:var(--deep);color:#FBF7EE;padding:8px 14px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
-.phase .body{padding:12px 14px}
-.goal{background:var(--paper);border-radius:8px;padding:8px 12px;font-size:13.5px;margin-bottom:8px}.goal b{color:var(--deep)}
-.act{font-size:13.5px;margin:7px 0 7px 0;padding-left:24px;position:relative}.act:before{content:"▶";position:absolute;left:4px;color:var(--gold);font-size:11px;top:3px}
-.act .d{font-weight:700;color:var(--berry)}
-.chk{width:14px;height:14px;border:1.5px solid var(--grey);border-radius:3px;display:inline-block;margin-right:6px;vertical-align:-2px}
+.who{text-align:center}.who .nm{font-size:23px;font-weight:700;color:var(--berry)}.who .meta{color:var(--grey);font-size:13.5px;margin-top:3px}
+.lvbadge{display:inline-block;background:linear-gradient(135deg,var(--gold),#E4D4A8);color:#241B12;font-weight:700;border-radius:30px;padding:7px 20px;font-size:17px;margin-top:8px}
+.sec-h{font-family:"Cormorant Garamond",serif;color:var(--berry);font-size:20px;margin:0 0 4px;border-left:5px solid var(--gold);padding-left:10px}
+.sec-d{color:var(--grey);font-size:12.5px;margin:0 0 12px;padding-left:11px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+/* matrix 5x7 */
+.mx{width:100%;border-collapse:separate;border-spacing:3px;font-size:11px}
+.mx th{font-size:10.5px;color:var(--grey);font-weight:700;padding:2px}
+.mx td.lab{text-align:left;font-weight:700;color:var(--deep);font-size:12px;white-space:nowrap;padding-right:6px}
+.mx .cell{height:22px;border-radius:5px;background:var(--paper);text-align:center;color:#b9ad97;font-weight:700}
+.mx .on{background:#E9D9B0;color:#8a6d2f}
+.mx .cur{background:linear-gradient(135deg,var(--gold),var(--berry));color:#fff;box-shadow:0 1px 4px rgba(120,80,20,.4)}
+.legend{font-size:11.5px;color:var(--grey);margin-top:8px;display:flex;gap:14px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:5px}.sw{width:13px;height:13px;border-radius:4px;display:inline-block}
+/* domain card */
+.dcard{border:1px solid var(--line);border-left:5px solid var(--c,#9C7B3F);border-radius:14px;padding:16px;margin:12px 0;background:#fff}
+.dhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dhead .ic{font-size:26px}.dhead .nm{font-weight:700;color:var(--c,#9C7B3F);font-size:17px}
+.dhead .lv{margin-left:auto;background:var(--c,#9C7B3F);color:#fff;font-weight:700;border-radius:14px;padding:2px 12px;font-size:13px}
+.flag{background:#E07A2F;color:#fff;border-radius:12px;padding:1px 9px;font-size:11px;font-weight:700}
+/* ladder */
+.ladder{display:flex;gap:4px;margin:10px 0 6px}
+.ladder .st{flex:1;height:30px;border-radius:5px;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#b9ad97;position:relative}
+.ladder .st.done{background:var(--c,#9C7B3F);color:#fff;opacity:.55}
+.ladder .st.here{background:var(--c,#9C7B3F);color:#fff;opacity:1;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.ladder .st.next{background:#fff;border:2px dashed var(--c,#9C7B3F);color:var(--c,#9C7B3F)}
+.didx{font-size:12px;color:var(--grey);display:flex;justify-content:space-between;margin-bottom:2px}
+.box{background:var(--paper);border-radius:9px;padding:9px 12px;font-size:13.5px;margin:7px 0}
+.box b{color:var(--deep)}
+.goal{background:#FBEEE0;border-left:3px solid #E07A2F;border-radius:8px;padding:9px 12px;font-size:13.5px;margin:7px 0}
+.phase{display:grid;grid-template-columns:64px 1fr;gap:8px;margin:6px 0;align-items:start}
+.phase .p{background:var(--deep);color:#FBF7EE;border-radius:8px;text-align:center;font-size:11.5px;font-weight:700;padding:5px 2px}
+.phase .a{font-size:13.5px}.phase .a .chk{width:14px;height:14px;border:1.5px solid var(--grey);border-radius:3px;display:inline-block;margin-right:6px;vertical-align:-2px}
+.mile{background:#EAF5EC;border-left:3px solid var(--green);border-radius:8px;padding:9px 12px;font-size:13px;margin-top:8px}
 .btn{display:inline-block;background:var(--berry);color:#fff;text-decoration:none;font-weight:700;padding:10px 20px;border-radius:24px;font-size:14px;border:0;cursor:pointer;font-family:inherit}
 .btn.ghost{background:transparent;color:var(--berry);border:1.5px solid var(--berry)}.btns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 .gate{max-width:430px;margin:20px auto;text-align:center}.gate input{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font-size:14px;margin:8px 0;font-family:inherit}
 .note{background:var(--paper);border-radius:10px;padding:11px 14px;font-size:12.5px;color:var(--grey);margin-top:10px}
+.cred{font-size:12px;color:var(--grey);text-align:center;margin-top:6px}
 footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border-top:1px solid var(--line);padding-top:14px}
-@media print{.bar,.btns{display:none}body{background:#fff}.card{box-shadow:none}}
+@media print{.bar,.btns{display:none}body{background:#fff}.card,.dcard{box-shadow:none;break-inside:avoid}}
 </style></head><body>
 <div class="bar"><a class="h" href="index.html">★ BrightStar Portal</a><a href="parent.html">แดชบอร์ดผู้ปกครอง</a><span class="sp"></span><a onclick="window.print()">🖨 พิมพ์/บันทึก PDF</a></div>
-<div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แผนพัฒนารายบุคคล (IDP) · 30 / 60 / 90 วัน</h1></div>
+<div class="hero"><img src="logo.png" alt="logo"><div class="k">BRIGHTSTAR ASSESSMENT INSTITUTE</div><h1>แผนพัฒนารายบุคคล (IDP)</h1><div class="sm">วิเคราะห์ 5 สมรรถนะ × 7 ระดับ · สร้างเฉพาะบุตรหลานโดยอัตโนมัติ</div></div>
 <div class="wrap" id="app"></div>
-<footer>BrightStar Assessment Institute · แผนพัฒนาเฉพาะบุคคล สร้างอัตโนมัติจากผลประเมิน · กิจกรรมเป็นแนวทาง ปรับตามความพร้อมของเด็กได้</footer>
+<footer>BrightStar Assessment Institute · แผนสร้างอัตโนมัติจากผลประเมินรายด้าน · อิงพัฒนาการเด็กปฐมวัยตามวัย · รับรองวิชาการโดยมหาวิทยาลัยวงษ์ชวลิตกุล · กิจกรรมเป็นแนวทาง ปรับตามความพร้อมของเด็กได้</footer>
 <script>
 var W={th:20,en:20,ma:25,ef:20,mo:15};
-var NM={th:['🇹🇭','ภาษาไทย'],en:['🔤','ภาษาอังกฤษ'],ma:['🔢','คณิต-ตรรกะ'],ef:['🧠','EF / เชาวน์'],mo:['✋','กล้ามเนื้อ']};
-// คลังกิจกรรมที่บ้าน: [30วัน, 60วัน, 90วัน] ต่อด้าน
-var ACT={
- th:[['อ่านนิทานด้วยกันวันละ 10 นาที','ชี้ภาพแล้วชวนลูกเล่าว่าเห็นอะไร'],
-     ['ให้ลูกเล่าเรื่องจากภาพ 3-4 ประโยค','เล่นต่อคำ/ต่อประโยคสนุก ๆ'],
-     ['หัดเขียนชื่อตัวเอง/คำที่ชอบ','เล่าเรื่องที่ยาวขึ้นและมีลำดับ']],
- en:[['ดูเพลง/การ์ตูนอังกฤษสั้น ๆ วันละ 1 คลิป','ชี้ของรอบตัวแล้วพูดชื่อเป็นภาษาอังกฤษ'],
-     ['เล่นจับคู่คำศัพท์หมวด สี/สัตว์/ตัวเลข','ร้องเพลงเด็กภาษาอังกฤษด้วยกัน'],
-     ['ฝึกประโยคทักทายง่าย ๆ (Hello/Thank you)','เล่นบทบาทสมมติสั้น ๆ เป็นภาษาอังกฤษ']],
- ma:[['นับสิ่งของจริงในบ้าน (ช้อน ผลไม้)','เปรียบเทียบ มาก-น้อย ใหญ่-เล็ก'],
-     ['แยกกลุ่ม/จับคู่ตามสี-รูปทรง','ต่อบล็อก/ตัวต่อตามแบบที่กำหนด'],
-     ['บวก-ลบจำนวนน้อย ๆ ด้วยของจริง','เล่นเกมหาแบบรูป (pattern) ที่ซับซ้อนขึ้น']],
- ef:[['เล่นเกมผลัดกัน/รอคอยคิว','เล่นบทบาทสมมติ (พ่อครัว/หมอ)'],
-     ['เกมความจำ (จับคู่การ์ด)','ทำตามคำสั่ง 2-3 ขั้นตอนต่อเนื่อง'],
-     ['ชวนวางแผนงานเล็ก ๆ (จัดโต๊ะ/เก็บของ)','เกมหยุด-ไป (ฝึกยับยั้งชั่งใจ)']],
- mo:[['วิ่ง กระโดด โยน-รับลูกบอลนุ่ม','เดินทรงตัวบนเส้น/คานเตี้ย'],
-     ['ระบายสีในกรอบ ตัดกระดาษตามเส้น','ร้อยลูกปัด/หนีบไม้หนีบผ้า'],
-     ['เขียนเส้น-รูปทรงตามแบบ','ปั้นดินน้ำมันเป็นรูปต่าง ๆ']]
+var NM={th:['🇹🇭','ภาษาไทย','#9C7B3F'],en:['🔤','ภาษาอังกฤษ','#E07A2F'],ma:['🔢','คณิต-ตรรกะ','#1A7F5A'],ef:['🧠','EF / เชาวน์','#3457B2'],mo:['✋','กล้ามเนื้อ','#8A4FB3']};
+var RNAME=['ดาวน้อย','ดาวเริ่มฉาย','ดาวสุกใส','ดาวเด่น','ดาวนำทาง','ดาวเจิดจรัส','ดาวมาสเตอร์'];
+var RROMAN=['I','II','III','IV','V','VI','VII'];
+var BAND=[[96,7],[88,6],[78,5],[65,4],[50,3],[35,2],[0,1]];
+function lvNum(v){for(var i=0;i<BAND.length;i++){if(v>=BAND[i][0])return BAND[i][1];}return 1;}
+// คำอธิบาย "ทำได้แล้ว" ต่อด้าน [ระดับ1..7]
+var DESC={
+ th:['ฟังเข้าใจคำสั่งง่าย พูดเป็นคำ/วลีสั้น','พูดเป็นประโยคสั้น เล่าสิ่งที่เห็นได้บ้าง','เล่าเรื่องจากภาพ 2-3 ประโยค รู้จักพยัญชนะบางตัว','เล่าเรื่องมีลำดับ อ่านคำคุ้นเคย เขียนชื่อตัวเองได้','อ่านคำ/ประโยคสั้นได้ เล่าเรื่องยาวขึ้นมีเหตุผล','อ่านประโยคคล่อง เขียนได้หลายคำ สื่อสารชัดเจน','อ่าน-เขียนคล่องเกินวัย เล่าเรื่องสร้างสรรค์'],
+ en:['เริ่มคุ้นเสียงภาษาอังกฤษ รู้คำทักทายบางคำ','รู้คำศัพท์พื้นฐาน (สี/ตัวเลข/สัตว์) บางคำ','บอกคำศัพท์หลายหมวด เข้าใจคำสั่งง่าย (Pre-A1)','พูดวลี/ประโยคสั้น ตอบคำถามง่าย (A1 ต้น)','สื่อสารประโยคง่าย เข้าใจเรื่องสั้น (A1)','สนทนาโต้ตอบง่าย คำศัพท์กว้าง (A1+/A2)','ใช้ภาษาอังกฤษคล่องเกินวัย (A2)'],
+ ma:['นับ 1-5 จับคู่หนึ่งต่อหนึ่งได้บ้าง','นับ 1-10 รู้มาก-น้อย รูปทรงพื้นฐาน','นับ-บอกจำนวนถึง 20 จัดกลุ่มได้','เปรียบเทียบ บวกลบจำนวนน้อยด้วยของจริง','บวกลบในใจจำนวนน้อย เข้าใจแบบรูป/ลำดับ','แก้โจทย์ง่าย เหตุผลเชิงตรรกะดี','คิดเลข/ตรรกะเกินวัย แก้ปัญหาหลายขั้น'],
+ ef:['ทำกิจวัตรกับผู้ใหญ่ รอคอยสั้น ๆ ได้บ้าง','รอคิว/ผลัดกันได้ จดจำสิ่งของ','ทำตามคำสั่ง 2 ขั้น ควบคุมตัวเองได้ขึ้น','วางแผนเล่นง่าย ยับยั้งชั่งใจดีขึ้น ความจำใช้งานดี','ทำงานหลายขั้น ปรับเปลี่ยนเมื่อกติกาเปลี่ยน','วางแผน-แก้ปัญหาเอง สมาธิจดจ่อดี','คิดยืดหยุ่น วางแผนซับซ้อนเกินวัย'],
+ mo:['เดิน-วิ่งได้ จับสิ่งของชิ้นใหญ่','กระโดด ขว้าง-รับลูกบอลใหญ่ ขีดเขียนเส้น','ทรงตัวดีขึ้น ระบายสีในกรอบคร่าว ๆ','รับ-โยนแม่นขึ้น ตัดกระดาษตามเส้น จับดินสอถูก','ประสานมือ-ตาดี เขียนรูปทรง/ตัวอักษรได้','เคลื่อนไหวคล่อง กล้ามเนื้อมัดเล็กแม่นยำ','ทักษะการเคลื่อนไหว/เขียนเกินวัย']
 };
-var GOAL=['เริ่มต้น: สร้างความคุ้นเคยและความสนุก ทำสั้น ๆ สม่ำเสมอทุกวัน',
-          'ต่อยอด: เพิ่มความท้าทายทีละน้อย ชวนลูกคิด/ลองเอง',
-          'มั่นใจ: ทำได้คล่องขึ้น เชื่อมโยงกับสถานการณ์จริง พร้อมวัดซ้ำ'];
+// กิจกรรม 3 ชิ้น (→ 30/60/90) ต่อด้าน ต่อระดับ
+var ACT={
+ th:[['ฟังนิทานสั้นทุกวัน ชี้ภาพบอกชื่อ','พูดตามคำ/วลี','ร้องเพลงเด็กง่าย ๆ'],['ชวนพูดประโยค "นี่คือ..."','เล่าสิ่งที่ทำวันนี้ 1-2 ประโยค','เล่นถาม-ตอบสั้น ๆ'],['เล่าเรื่องจากภาพ 3 ประโยค','จับคู่ภาพ-เสียงพยัญชนะ','ต่อคำคล้องจอง'],['อ่านป้าย/คำรอบตัว','หัดเขียนชื่อ + คำสั้น','เล่าเรื่องมีต้น-กลาง-จบ'],['อ่านนิทานประโยคสั้นด้วยกัน','เขียนประโยคสั้นเล่าเรื่อง','เล่นเกมทายคำ'],['ผลัดกันอ่านนิทานยาวขึ้น','เขียนเล่าเรื่อง 3-4 ประโยค','เกมคำศัพท์'],['แต่งเรื่อง/วาดแล้วเขียนบรรยาย','อ่านหนังสือที่สนใจเอง','เกมคำขั้นสูง']],
+ en:[['ดูเพลง/การ์ตูนอังกฤษวันละคลิป','ชี้ของพูดชื่อเป็นอังกฤษ','ทักทาย Hi/Bye'],['เกมจับคู่คำ สี/ตัวเลข/สัตว์','ร้องเพลง ABC','ชี้-บอกคำในบ้าน'],['เกมคำศัพท์หลายหมวด','ทำตามคำสั่งง่าย (Stand up/Sit)','เล่น flashcards'],['ฝึกวลี I like.../This is...','ตอบ What\'s this?','เพลงประโยคสั้น'],['บทบาทสมมติสั้นภาษาอังกฤษ','ฟังนิทานอังกฤษสั้น','พูดเล่าของที่ชอบ'],['สนทนาถาม-ตอบประจำวัน','อ่านหนังสือภาพอังกฤษ','เกมคำขั้นกลาง'],['อ่านออกเสียง/เล่าเรื่องอังกฤษ','ดูสื่ออังกฤษไม่มีซับ','เขียนคำง่าย ๆ']],
+ ma:[['นับของจริง 1-5','จับคู่ของชิ้นต่อชิ้น','ร้องเพลงนับเลข'],['นับ 1-10 ของจริง','เปรียบเทียบมาก-น้อย','หารูปทรงรอบตัว'],['นับถึง 20','จัดกลุ่มตามสี/ขนาด','ต่อบล็อกตามแบบ'],['บวก-ลบของจริง 0-5','เล่นแบบรูป (pattern)','เรียงลำดับ'],['โจทย์บวกลบสั้นในชีวิตจริง','เกมแบบรูปซับซ้อน','ปริศนาตรรกะ'],['โจทย์ปัญหา 2 ขั้น','บอร์ดเกม/ซูโดกุเด็ก','วัด-เปรียบเทียบ'],['โจทย์หลายขั้น','เกมตรรกะขั้นสูง','ตั้งโจทย์เอง']],
+ ef:[['เกมรอคอยสั้น ๆ','ทำกิจวัตรเป็นลำดับ','เล่นซ่อนหา'],['เกมผลัดกันเล่น','เกมความจำจับคู่','ทำตามคำสั่ง 1-2 ขั้น'],['คำสั่ง 2-3 ขั้นต่อเนื่อง','เกมหยุด-ไป (Red light)','เก็บของเข้าที่'],['วางแผนกิจกรรมเล็ก','เกมที่ต้องอดทนรอ','ต่อจิ๊กซอว์'],['งานหลายขั้น (ทำอาหารง่าย)','เกมเปลี่ยนกติกากลางคัน','บอร์ดเกม'],['วางแผนโปรเจกต์เล็ก','เกมกลยุทธ์เด็ก','เล่าแผนแล้วลงมือ'],['โครงงานหลายวัน','เกมวางแผนขั้นสูง','ฝึกตั้งเป้า-ทบทวน']],
+ mo:[['วิ่ง-กระโดดในที่ปลอดภัย','จับ-ปล่อยของชิ้นใหญ่','ขีดเขียนอิสระ'],['โยน-รับลูกบอลนุ่ม','เดินตามเส้น','ขีดเส้นตรง-วงกลม'],['ทรงตัวขาเดียว','ระบายสีในกรอบ','ปั้นดินน้ำมัน'],['รับ-โยนเข้าเป้า','ตัดกระดาษตามเส้น','ร้อยลูกปัด'],['กระโดดข้ามสิ่งกีดขวาง','เขียนรูปทรง/ตัวอักษร','พับกระดาษ'],['กระโดดเชือก/ประสานซับซ้อน','เขียนคล่องขึ้น','งานประดิษฐ์ละเอียด'],['กีฬา/ท่าทางซับซ้อน','งานฝีมือขั้นสูง','เขียนสวยคล่อง']]
+};
 function decode(){try{var m=location.hash.match(/d=([^&]+)/);if(!m)return null;return JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(m[1])))));}catch(e){return null}}
 function esc(s){return (''+(s==null?'':s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function radar(s){var ks=['th','en','ma','ef','mo'],pts=[],lab=[],cx=120,cy=115,R=86;
+ for(var i=0;i<5;i++){var a=-Math.PI/2+i*2*Math.PI/5;var v=(s&&s[ks[i]]!=null&&s[ks[i]]!=='')?Number(s[ks[i]]):0;var r=R*Math.max(0,Math.min(100,v))/100;
+  pts.push((cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1));
+  lab.push('<text x="'+(cx+(R+15)*Math.cos(a)).toFixed(0)+'" y="'+(cy+(R+15)*Math.sin(a)+4).toFixed(0)+'" font-size="11" text-anchor="middle" fill="#5C3A22" font-family="Sarabun">'+NM[ks[i]][1]+'</text>');}
+ var rings='';[0.33,0.66,1].forEach(function(f){var p=[];for(var i=0;i<5;i++){var a=-Math.PI/2+i*2*Math.PI/5;p.push((cx+R*f*Math.cos(a)).toFixed(1)+','+(cy+R*f*Math.sin(a)).toFixed(1));}rings+='<polygon points="'+p.join(' ')+'" fill="none" stroke="#EADFCB" stroke-width="1"/>';});
+ return '<svg width="240" height="230" viewBox="0 0 240 235">'+rings+'<polygon points="'+pts.join(' ')+'" fill="rgba(156,123,63,.28)" stroke="#9C7B3F" stroke-width="2.5"/>'+lab.join('')+'</svg>';}
+function matrix(levels){var ks=['th','en','ma','ef','mo'];var h='<table class="mx"><tr><th class="lab"></th>';
+ for(var L=1;L<=7;L++)h+='<th>'+RROMAN[L-1]+'</th>';h+='</tr>';
+ ks.forEach(function(k){h+='<tr><td class="lab">'+NM[k][0]+' '+NM[k][1]+'</td>';
+  for(var L=1;L<=7;L++){var cls='cell'+(L<levels[k]?' on':'')+(L===levels[k]?' cur':'');h+='<td class="'+cls+'">'+(L===levels[k]?'★':'')+'</td>';}
+  h+='</tr>';});
+ h+='</table>';return h;}
+function ladder(k,lv){var c=NM[k][2];var h='<div class="ladder">';
+ for(var L=1;L<=7;L++){var cls='st'+(L<lv?' done':'')+(L===lv?' here':'')+(L===lv+1?' next':'');h+='<div class="st '+cls.replace('st','').trim()+'" style="--c:'+c+'">'+RROMAN[L-1]+'</div>';}
+ h+='</div>';return h;}
 function render(){
  var app=document.getElementById('app'),d=decode();
- if(!d){app.innerHTML='<div class="card gate"><div style="font-size:36px">🎯</div><h2 style="color:var(--berry);font-family:Cormorant Garamond,serif">ใส่รหัส/ลิงก์ผล</h2><p style="color:var(--grey);font-size:14px">วางลิงก์ผลของบุตรหลานเพื่อสร้างแผนพัฒนาอัตโนมัติ</p><input id="g" placeholder="วางลิงก์ หรือ #d=..." onkeydown="if(event.key===\'Enter\')gg()"><button class="btn" onclick="gg()">สร้างแผน →</button></div>';return;}
- var entries=[];for(var k in W){var v=d.s&&d.s[k];if(v!==''&&v!=null)entries.push([k,Number(v)]);}
- entries.sort(function(a,b){return a[1]-b[1]});
- var focus=entries.filter(function(e){return e[1]<65;}).slice(0,2);
- if(focus.length===0) focus=entries.slice(0,1); // ถ้าเก่งหมด เน้นด้านต่ำสุด 1 ด้านเพื่อต่อยอด
- var strong=entries.length?entries[entries.length-1]:null;
- var bars='';for(var i=0;i<entries.length;i++){var k=entries[i][0],v=entries[i][1];var isF=focus.some(function(f){return f[0]===k;});
-   bars+='<div class="dom"><div class="top"><b>'+NM[k][0]+' '+NM[k][1]+(isF?'<span class="tag" style="background:#E07A2F;color:#fff">เน้นพัฒนา</span>':'')+'</b><span class="sc">'+v+'/100</span></div><div class="track"><div class="fill" style="width:'+v+'%"></div></div></div>';}
+ if(!d){app.innerHTML='<div class="card gate"><div style="font-size:36px">🎯</div><h2 style="color:var(--berry);font-family:Cormorant Garamond,serif">ใส่รหัส/ลิงก์ผล</h2><p style="color:var(--grey);font-size:14px">วางลิงก์ผลของบุตรหลานเพื่อสร้างแผนพัฒนาเฉพาะบุคคล</p><input id="g" placeholder="วางลิงก์ หรือ #d=..." onkeydown="if(event.key===\'Enter\')gg()"><button class="btn" onclick="gg()">สร้างแผน →</button></div>';return;}
+ var ks=['th','en','ma','ef','mo'];var levels={},entries=[];
+ ks.forEach(function(k){var v=(d.s&&d.s[k]!=null&&d.s[k]!=='')?Number(d.s[k]):0;levels[k]=lvNum(v);entries.push([k,v,levels[k]]);});
+ var order=entries.slice().sort(function(a,b){return a[1]-b[1];});
+ var weak=order[0][0], strong=order[order.length-1][0];
  // header
  var html='<div class="card who"><div class="nm">'+esc(d.n)+'</div><div class="meta">'+(d.sch?esc(d.sch)+' · ':'')+'ระดับชั้น '+esc(d.c)+(d.dt?' · ประเมิน '+esc(d.dt):'')+'</div>'
-  +'<div class="meta">ระดับ '+esc(d.lv&&d.lv.r)+' · '+esc(d.lv&&d.lv.n)+' · คะแนนรวม '+esc(d.w)+'/100</div></div>';
- html+='<div class="card"><div class="sec-h">ภาพรวมคะแนน &amp; ด้านที่เน้นพัฒนา</div>'+bars
-  +'<div class="note good">💛 <b>จุดเด่นที่ควรชื่นชมต่อ:</b> '+(strong?NM[strong[0]][1]+' ('+strong[1]+')':'-')+' — ให้กำลังใจและเปิดโอกาสให้ลูกได้ใช้จุดแข็งบ่อย ๆ</div>'
-  +'<div class="note focus">🎯 <b>2 ด้านที่แผนนี้จะเน้น:</b> '+focus.map(function(f){return NM[f[0]][1];}).join(' · ')+' — เลือกจากด้านที่คะแนนต่ำสุด เพื่อยกพัฒนาการอย่างตรงจุด</div></div>';
- // phases
- var phases=[['30 วันแรก','0-30',0],['วันที่ 31-60','31-60',1],['วันที่ 61-90','61-90',2]];
- for(var p=0;p<3;p++){
-   var ph=phases[p];
-   html+='<div class="phase"><div class="ph"><span>📅 '+ph[0]+'</span><span style="font-size:12px;font-weight:400">ช่วงที่ '+(p+1)+'</span></div><div class="body">';
-   html+='<div class="goal">🎯 <b>เป้าหมายช่วงนี้:</b> '+GOAL[p]+'</div>';
-   focus.forEach(function(f){
-     var k=f[0];var acts=ACT[k][p];
-     html+='<div class="act"><span class="d">'+NM[k][0]+' '+NM[k][1]+':</span></div>';
-     acts.forEach(function(a){html+='<div class="act" style="margin-left:10px"><span class="chk"></span>'+esc(a)+'</div>';});
-   });
-   html+='</div></div>';
- }
+  +'<div class="lvbadge">ระดับรวม '+esc(d.lv&&d.lv.r)+' · '+esc(d.lv&&d.lv.n)+' · '+esc(d.w)+'/100</div>'
+  +'<div class="cred">แผนนี้สร้างเฉพาะบุตรหลาน จากผล 5 ด้าน × 7 ระดับ = 16,807 รูปแบบที่เป็นไปได้</div></div>';
+ // infographic card
+ html+='<div class="card"><div class="sec-h">ภาพรวมพัฒนาการ (อินโฟกราฟิก)</div><div class="sec-d">ตำแหน่งของบุตรหลานในแต่ละด้าน เทียบ 7 ระดับ Star Path</div>'
+  +'<div class="grid2"><div style="text-align:center">'+radar(d.s)+'</div><div>'+matrix(levels)
+  +'<div class="legend"><span><span class="sw" style="background:#E9D9B0"></span>ผ่านระดับนี้แล้ว</span><span><span class="sw" style="background:linear-gradient(135deg,#C9A961,#9C7B3F)"></span>ระดับปัจจุบัน ★</span></div></div></div>'
+  +'<div class="note">💛 <b>จุดเด่น:</b> '+NM[strong][1]+' (ระดับ '+RROMAN[levels[strong]-1]+' '+RNAME[levels[strong]-1]+') &nbsp;·&nbsp; 🎯 <b>ควรเน้นพัฒนาก่อน:</b> '+NM[weak][1]+' (ระดับ '+RROMAN[levels[weak]-1]+')</div></div>';
+ // per-domain detailed plans (weakest first)
+ html+='<div class="card"><div class="sec-h">แผนพัฒนารายด้าน · 30 / 60 / 90 วัน</div><div class="sec-d">แต่ละด้านปรับตาม "ระดับจริง" ของบุตรหลาน — เน้นพาขึ้นสู่ระดับถัดไปอย่างตรงจุด</div>';
+ order.forEach(function(e){
+  var k=e[0],lv=e[2],c=NM[k][2];var isWeak=(k===weak);
+  var nextTxt=lv<7?('เป้าหมายระดับถัดไป ('+RROMAN[lv]+' '+RNAME[lv]+'): '+DESC[k][lv]) : ('รักษาระดับสูงสุดและต่อยอดความท้าทาย');
+  var acts=ACT[k][lv-1];var phases=['30 วัน','60 วัน','90 วัน'];
+  html+='<div class="dcard" style="--c:'+c+'"><div class="dhead"><span class="ic">'+NM[k][0]+'</span><span class="nm">'+NM[k][1]+'</span>'+(isWeak?'<span class="flag">เน้นเป็นพิเศษ</span>':'')+'<span class="lv">ระดับ '+RROMAN[lv-1]+' · '+RNAME[lv-1]+' ('+e[1]+')</span></div>'
+   +ladder(k,lv)
+   +'<div class="box">✅ <b>สิ่งที่ทำได้แล้ว:</b> '+DESC[k][lv-1]+'</div>'
+   +'<div class="goal">🎯 <b>'+nextTxt+'</b></div>';
+  for(var p=0;p<3;p++){if(acts[p])html+='<div class="phase"><div class="p">📅 '+phases[p]+'</div><div class="a"><span class="chk"></span>'+esc(acts[p])+'</div></div>';}
+  if(lv<7)html+='<div class="mile">🏅 <b>เช็กเมื่อทำได้ (ผ่านสู่ระดับ '+RROMAN[lv]+'):</b> '+DESC[k][lv]+'</div>';
+  html+='</div>';
+ });
+ html+='</div>';
+ // next steps
  html+='<div class="card" style="text-align:center"><div class="sec-h" style="text-align:left">ขั้นต่อไป</div>'
-  +'<p style="font-size:14px;color:var(--grey)">ทำกิจกรรมสม่ำเสมอ 90 วัน แล้ว <b>วัดซ้ำ</b> เพื่อดูพัฒนาการที่ชัดเจนขึ้น — เด็กส่วนใหญ่ขยับระดับดาวได้เมื่อฝึกตรงจุด</p>'
+  +'<p style="font-size:14px;color:var(--grey)">ทำกิจกรรมสม่ำเสมอ 90 วัน แล้ว <b>วัดซ้ำ</b> เพื่อดูว่าแต่ละด้านขยับขึ้นระดับหรือไม่ — บันทึกผลในสมุดพาสปอร์ตเพื่อเทียบก่อน–หลัง</p>'
   +'<div class="btns"><a class="btn" href="https://bsi-main.github.io/brightstar-assessment/BSI_Register.html" target="_blank" rel="noopener">จองรอบวัดซ้ำ</a>'
+  +'<a class="btn ghost" href="passport.html'+location.hash+'">📔 สมุดพาสปอร์ต</a>'
   +'<a class="btn ghost" href="parent.html'+location.hash+'">← กลับแดชบอร์ด</a>'
-  +'<button class="btn ghost" onclick="window.print()">🖨 พิมพ์แผนนี้</button></div></div>';
+  +'<button class="btn ghost" onclick="window.print()">🖨 พิมพ์แผน</button></div></div>';
  app.innerHTML=html;
 }
 function gg(){var v=document.getElementById('g').value.trim();if(!v)return;var m=v.match(/[#?]d=([^&]+)/);location.hash='d='+(m?m[1]:v);render();}
