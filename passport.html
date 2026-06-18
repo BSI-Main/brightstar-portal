@@ -38,7 +38,7 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 <footer>BrightStar Assessment Institute · สมุดบันทึกพัฒนาการข้ามรอบ · เก็บในเบราว์เซอร์เครื่องนี้ (ส่วนตัว)</footer>
 <script>
 var W={th:20,en:20,ma:25,ef:20,mo:15};
-var NM={th:'ไทย',en:'อังกฤษ',ma:'คณิต',ef:'EF',mo:'กล้ามเนื้อ'};
+var NM={th:'ไทย',en:'อังกฤษ',ma:'คณิต',ef:'EF',mo:'กล้ามเนื้อ (MO)'};
 var RN={I:1,II:2,III:3,IV:4,V:5,VI:6,VII:7};
 function decode(){try{var m=location.hash.match(/d=([^&]+)/);if(!m)return null;return JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(m[1])))));}catch(e){return null}}
 function esc(s){return (''+(s==null?'':s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}

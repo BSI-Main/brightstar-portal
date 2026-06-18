@@ -219,7 +219,7 @@ function importCSV(input){
    var rows=parseCSV(rd.result);if(rows.length<2){toast('ไฟล์ว่างหรือไม่มีข้อมูล');input.value='';return;}
    var H=rows[0].map(function(x){return (x||'').trim();});
    function col(name){return H.indexOf(name);}
-   var ci={id:col('รหัสนักเรียน'),name:col('ชื่อ-สกุล'),sch:col('โรงเรียน'),cls:col('ระดับชั้น'),tam:col('ตำบล'),amp:col('อำเภอ'),pro:col('จังหวัด'),par:col('ผู้ปกครอง'),con:col('ติดต่อ'),th:col('ไทย'),en:col('อังกฤษ'),ma:col('คณิต'),ef:col('EF'),mo:col('กล้ามเนื้อ'),dt:col('วันที่ประเมิน')};
+   var ci={id:col('รหัสนักเรียน'),name:col('ชื่อ-สกุล'),sch:col('โรงเรียน'),cls:col('ระดับชั้น'),tam:col('ตำบล'),amp:col('อำเภอ'),pro:col('จังหวัด'),par:col('ผู้ปกครอง'),con:col('ติดต่อ'),th:col('ไทย'),en:col('อังกฤษ'),ma:col('คณิต'),ef:col('EF'),mo:col('กล้ามเนื้อ (MO)'),dt:col('วันที่ประเมิน')};
    if(ci.name<0){toast('ไม่พบคอลัมน์ "ชื่อ-สกุล" — ใช้ไฟล์ที่ส่งออกจากระบบนี้');input.value='';return;}
    var a=load(),add=0,upd=0;
    function g(r,k){return ci[k]>=0?(r[ci[k]]||'').trim():'';}
@@ -237,7 +237,7 @@ function importCSV(input){
 }
 function exportCSV(){
  var a=load();if(!a.length){toast('ยังไม่มีข้อมูลให้ส่งออก');return;}
- var head=['รหัสนักเรียน','ชื่อ-สกุล','โรงเรียน','ระดับชั้น','ตำบล','อำเภอ','จังหวัด','ผู้ปกครอง','ติดต่อ','ไทย','อังกฤษ','คณิต','EF','กล้ามเนื้อ','วันที่ประเมิน','คะแนนรวม','ระดับ'];
+ var head=['รหัสนักเรียน','ชื่อ-สกุล','โรงเรียน','ระดับชั้น','ตำบล','อำเภอ','จังหวัด','ผู้ปกครอง','ติดต่อ','ไทย','อังกฤษ','คณิต','EF','กล้ามเนื้อ (MO)','วันที่ประเมิน','คะแนนรวม','ระดับ'];
  function c(v){v=(v==null?'':''+v);return '"'+v.replace(/"/g,'""')+'"';}
  var lines=[head.map(c).join(',')];
  a.forEach(function(r){var s=r.scores||{},w=weighted(s),L=w==null?{r:''}:lvObj(w);

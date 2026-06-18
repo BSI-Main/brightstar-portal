@@ -83,7 +83,7 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 <script>
 (function(){
  var W={th:20,en:20,ma:25,ef:20,mo:15};
- var NAMES={th:['🇹🇭','ภาษาไทย'],en:['🔤','ภาษาอังกฤษ'],ma:['🔢','คณิต-ตรรกะ'],ef:['🧠','EF / เชาวน์'],mo:['✋','กล้ามเนื้อ']};
+ var NAMES={th:['🇹🇭','ภาษาไทย (TH)'],en:['🔤','ภาษาอังกฤษ (EN)'],ma:['🔢','คณิต-ตรรกะ (MA)'],ef:['🧠','EF / เชาวน์ (EF)'],mo:['✋','กล้ามเนื้อ (MO)']};
  var LV=[[96,'VII'],[88,'VI'],[78,'V'],[65,'IV'],[50,'III'],[35,'II'],[0,'I']];var RN={I:1,II:2,III:3,IV:4,V:5,VI:6,VII:7};
  function lvR(w){for(var i=0;i<LV.length;i++)if(w>=LV[i][0])return LV[i][1];return 'I';}
  function wt(s){var sum=0,w=0;for(var k in W){if(s&&s[k]!=null&&s[k]!=='' ){sum+=Number(s[k])*W[k];w+=W[k];}}return w?Math.round(sum/w):null;}

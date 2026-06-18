@@ -38,7 +38,7 @@ footer{text-align:center;color:var(--grey);font-size:12px;margin-top:24px;border
 <script src="examinfo.js"></script>
 <script>
 var W={th:20,en:20,ma:25,ef:20,mo:15};
-var NAMES={th:["🇹🇭","ภาษาไทย"],en:["🔤","ภาษาอังกฤษ"],ma:["🔢","คณิต-ตรรกะ"],ef:["🧠","EF / เชาวน์"],mo:["✋","กล้ามเนื้อ"]};
+var NAMES={th:["🇹🇭","ภาษาไทย (TH)"],en:["🔤","ภาษาอังกฤษ (EN)"],ma:["🔢","คณิต-ตรรกะ (MA)"],ef:["🧠","EF / เชาวน์ (EF)"],mo:["✋","กล้ามเนื้อ (MO)"]};
 var DESC={'I':'ดาวดวงน้อยกำลังเริ่มต้น — วัยทองของการเล่นและสำรวจ','II':'ดาวเริ่มฉายแสง — พัฒนาการกำลังก่อตัวอย่างน่ารัก','III':'ดาวสุกใส — พื้นฐานหลายด้านมั่นคงขึ้น','IV':'ดาวเด่น — ทำได้ดีหลายกลุ่ม เหมาะเสริมความท้าทายเบา ๆ','V':'ดาวนำทาง — สมรรถนะโดยรวมแข็งแรง','VI':'ดาวเจิดจรัส — โดดเด่นรอบด้าน','VII':'ดาวมาสเตอร์ — เปล่งประกายเต็มที่ทุกด้าน'};
 function rn(r){return {I:1,II:2,III:3,IV:4,V:5,VI:6,VII:7}[r]||0}
 function esc(s){return (''+(s==null?'':s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -51,7 +51,7 @@ function radar(s){
  var rings='';[0.33,0.66,1].forEach(function(f){var p=[];for(var i=0;i<5;i++){var a=-Math.PI/2+i*2*Math.PI/5;p.push((cx+R*f*Math.cos(a)).toFixed(1)+','+(cy+R*f*Math.sin(a)).toFixed(1));}rings+='<polygon points="'+p.join(' ')+'" fill="none" stroke="#EADFCB" stroke-width="1"/>';});
  return '<svg width="230" height="215" viewBox="0 0 230 220">'+rings+'<polygon points="'+pts.join(' ')+'" fill="rgba(156,123,63,.28)" stroke="#9C7B3F" stroke-width="2.5"/>'+lab.join('')+'</svg>';
 }
-var ROOMS='<div class="rooms"><div class="rm"><b>🇹🇭 ภาษาไทย</b> ฟัง-พูด อ่าน-เขียน เล่าเรื่อง</div><div class="rm"><b>🔤 อังกฤษ</b> เทียบ CEFR Pre-A1/A1/A2</div><div class="rm"><b>🔢 คณิต-ตรรกะ</b> นับ รูปทรง แบบรูป เชาวน์</div><div class="rm"><b>🧠 EF/เชาวน์</b> ความจำ ยับยั้ง ยืดหยุ่นคิด</div><div class="rm"><b>✋ กล้ามเนื้อ</b> ทรงตัว ประสาน เขียน-ตัด-วาด</div></div>';
+var ROOMS='<div class="rooms"><div class="rm"><b>🇹🇭 ภาษาไทย (TH)</b> ฟัง-พูด อ่าน-เขียน เล่าเรื่อง</div><div class="rm"><b>🔤 อังกฤษ</b> เทียบ CEFR Pre-A1/A1/A2</div><div class="rm"><b>🔢 คณิต-ตรรกะ (MA)</b> นับ รูปทรง แบบรูป เชาวน์</div><div class="rm"><b>🧠 EF/เชาวน์</b> ความจำ ยับยั้ง ยืดหยุ่นคิด</div><div class="rm"><b>✋ กล้ามเนื้อ (MO)</b> ทรงตัว ประสาน เขียน-ตัด-วาด</div></div>';
 function render(){
  var app=document.getElementById('app'),d=decode();
  if(!d){app.innerHTML='<div class="card gate"><div style="font-size:38px">🔗</div><h2 style="color:var(--berry);font-family:Cormorant Garamond,serif">ใส่รหัส/ลิงก์ผล</h2><p style="color:var(--grey);font-size:14px">วางลิงก์ผลหรือรหัสที่สถาบันส่งให้ทาง LINE/อีเมล</p><input id="g" placeholder="วางลิงก์ หรือ #d=..." onkeydown="if(event.key===\'Enter\')gogate()"><button class="btn" onclick="gogate()">ดูผล →</button><div class="btns" style="margin-top:14px"><a class="btn ghost" href="index.html">← กลับหน้าพอร์ทัล</a></div></div>';return;}
