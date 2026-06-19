@@ -51,7 +51,7 @@ function radar(s){
  var rings='';[0.33,0.66,1].forEach(function(f){var p=[];for(var i=0;i<5;i++){var a=-Math.PI/2+i*2*Math.PI/5;p.push((cx+R*f*Math.cos(a)).toFixed(1)+','+(cy+R*f*Math.sin(a)).toFixed(1));}rings+='<polygon points="'+p.join(' ')+'" fill="none" stroke="#EADFCB" stroke-width="1"/>';});
  return '<svg width="230" height="215" viewBox="0 0 230 220">'+rings+'<polygon points="'+pts.join(' ')+'" fill="rgba(156,123,63,.28)" stroke="#9C7B3F" stroke-width="2.5"/>'+lab.join('')+'</svg>';
 }
-var ROOMS='<div class="rooms"><div class="rm"><b>🇹🇭 ภาษาไทย (TH)</b> ฟัง-พูด อ่าน-เขียน เล่าเรื่อง</div><div class="rm"><b>🔤 อังกฤษ</b> เทียบ CEFR Pre-A1/A1/A2</div><div class="rm"><b>🔢 คณิต-ตรรกะ (MA)</b> นับ รูปทรง แบบรูป เชาวน์</div><div class="rm"><b>🧠 EF/เชาวน์</b> ความจำ ยับยั้ง ยืดหยุ่นคิด</div><div class="rm"><b>✋ กล้ามเนื้อ (MO)</b> ทรงตัว ประสาน เขียน-ตัด-วาด</div></div>';
+var ROOMS='<div class="rooms"><div class="rm"><b>🇹🇭 ภาษาไทย (TH)</b> ฟัง-พูด อ่าน-เขียน เล่าเรื่อง</div><div class="rm"><b>🔤 อังกฤษ (EN)</b> เทียบ CEFR Pre-A1/A1/A2</div><div class="rm"><b>🔢 คณิต-ตรรกะ (MA)</b> นับ รูปทรง แบบรูป เชาวน์</div><div class="rm"><b>🧠 EF/เชาวน์ (EF)</b> ความจำ ยับยั้ง ยืดหยุ่นคิด</div><div class="rm"><b>✋ กล้ามเนื้อ (MO)</b> ทรงตัว ประสาน เขียน-ตัด-วาด</div></div>';
 function render(){
  var app=document.getElementById('app'),d=decode();
  if(!d){app.innerHTML='<div class="card gate"><div style="font-size:38px">🔗</div><h2 style="color:var(--berry);font-family:Cormorant Garamond,serif">ใส่รหัส/ลิงก์ผล</h2><p style="color:var(--grey);font-size:14px">วางลิงก์ผลหรือรหัสที่สถาบันส่งให้ทาง LINE/อีเมล</p><input id="g" placeholder="วางลิงก์ หรือ #d=..." onkeydown="if(event.key===\'Enter\')gogate()"><button class="btn" onclick="gogate()">ดูผล →</button><div class="btns" style="margin-top:14px"><a class="btn ghost" href="index.html">← กลับหน้าพอร์ทัล</a></div></div>';return;}
@@ -71,4 +71,4 @@ function render(){
 function gogate(){var v=document.getElementById('g').value.trim();if(!v)return;var c=v;var m=v.match(/[#?]d=([^&]+)/);if(m)c=m[1];location.hash='d='+c;render();}
 window.addEventListener('hashchange',render);render();if(window.renderExamInfo)renderExamInfo('examinfo');
 </script>
-</body></html>
+<div data-compcode-legend="1" style="max-width:1000px;margin:14px auto;padding:9px 14px;background:#FBF7EE;border:1px solid #EADFCB;border-left:4px solid #C9A961;border-radius:9px;font-family:'Sarabun',sans-serif;font-size:11.5px;color:#5C3A22;line-height:1.6">📊 <b>สมรรถนะ BSI (ชื่อทางการ):</b> <b>TH</b> สมรรถนะภาษาไทยและการรู้หนังสือ · <b>EN</b> สมรรถนะภาษาอังกฤษเพื่อการสื่อสาร · <b>MA</b> สมรรถนะคณิตศาสตร์และการคิดเชิงตรรกะ · <b>EF</b> สมรรถนะการคิดเชิงบริหารและการแก้ปัญหา · <b>MO</b> สมรรถนะการเคลื่อนไหวและสุขภาวะทางกาย</div></body></html>
